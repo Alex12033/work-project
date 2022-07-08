@@ -34,13 +34,77 @@ body {
   font-family: "Gilroy";
 }
 
-::-webkit-scrollbar {
+:-webkit-scrollbar {
   width: 0px;
 }
 
 .container {
   width: 90%;
   margin: 0 auto;
+}
+
+.navigation {
+  width: 89.2%;
+  height: 3rem;
+  position: fixed;
+  background: #001731;
+  padding: 0.3rem;
+}
+
+.main-header__brand img {
+  height: 2.5rem;
+  display: flex;
+  justify-content: right;
+  flex-direction: row;
+  align-items: center;
+  margin-left: -0.7rem;
+  margin-top: -0.7rem;
+}
+
+.main-nav {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 1rem;
+
+}
+
+.main-nav__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  font-size: medium;
+}
+
+.main-nav__item {
+  margin: 0 1rem;
+}
+
+.main-nav__item a,
+.mobile-nav__item a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.2rem 0;
+}
+
+.main-nav__item--main-nav__item--start {
+  display: flex;
+}
+
+main-nav__item main-nav__item--sign {
+  position: relative;
+  display: flex;
+  
+  
+}
+
+.main-nav__item a:hover,
+.main-nav__item a:active {
+  color: white;
+  border-bottom: 5px solid white;
 }
 
 .main-footer {
