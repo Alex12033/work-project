@@ -1,0 +1,177 @@
+/* here will be styles which use on more then one page */
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("./fonts/Gilroy-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("./fonts/Gilroy-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("./fonts/Gilroy-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("./fonts/Gilroy-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Gilroy";
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.main-footer {
+  display: flex;
+  width: 100%;
+  /* height: 372px; */
+  height: 100%;
+  left: 0px;
+  background: #031e3e;
+  margin-top: calc(100vh - 70%)
+}
+
+.footer {
+  margin: 3rem auto;
+  vertical-align: middle;
+}
+
+.main-footer__wrapp-all-info {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin: 0 auto;
+}
+
+.main-footer__shared-bloc {
+  display: flex;
+}
+
+.main-footer__links-bloc {
+  display: flex;
+}
+
+.main-footer__classification-links {
+  text-align: left;
+}
+
+.main-footer__classification-links h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding-left: 40px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.main-footer__links {
+  list-style: none;
+}
+
+.main-footer__link {
+  margin: 1rem 0;
+}
+
+.main-footer__link a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.main-footer__link a:hover,
+.main-footer__link a:active {
+  color: #ccc;
+}
+
+.main-footer__subscription {
+  margin-left: 5rem;
+}
+
+.main-footer__subscription h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.main-footer__subscription p {
+  width: 20rem;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.input {
+  vertical-align: bottom;
+}
+
+#email {
+  background: #ffffff;
+  padding: 12px 12px 8px;
+  border-radius: 8px;
+  width: 14rem;
+  height: 1rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  color: #031e3e;
+}
+
+.input-btn {
+  padding: 12px 12px 8px;
+  width: 6rem;
+  background: #398bff;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.input-btn:hover,
+.input-btn:active {
+  cursor: pointer;
+  background: rgb(5, 46, 18);
+}
+
+.social-network {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: space-between;
+}
+
+.social-network p {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #ffffff;
+  opacity: 0.7;
+}
+
+.social-network__icon {
+  list-style: none;
+}
+
+.social-network__icon a {
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 0.7;
+  margin-left: 0.5rem;
+}
