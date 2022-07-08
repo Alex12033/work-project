@@ -34,16 +34,21 @@ body {
   font-family: "Gilroy";
 }
 
+<<<<<<< HEAD
 .navigation {
   width: 100%;
   height: 3rem;
   position: fixed;
   background: #001731;
   padding: 0.5rem 1rem;
+=======
+::-webkit-scrollbar {
+  width: 0px;
+>>>>>>> master
 }
 
 .container {
-  width: 1280px;
+  width: 90%;
   margin: 0 auto;
 }
 
