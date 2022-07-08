@@ -1,0 +1,17 @@
+.features{
+    display: flex;
+    align-items: center;
+}
+
+.features-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.features-right img{
+    height: 100%;
+    width: 100%;
+}
+
+
+
