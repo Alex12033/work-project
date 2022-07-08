@@ -3,15 +3,45 @@
     align-items: center;
 }
 
+.title {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.title span {
+    margin-left: 10px;
+}
+
 .features-left {
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
+    height: 475px;
+    width: 50%;
 }
+
+.game-selection {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.game-selection__title {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.game-selection__description {
+    font-size: 10px;
+    color: #001731;
+    opacity: 0.3;
+    
+}
+
 
 .features-right img{
     height: 100%;
     width: 100%;
 }
-
-
 
