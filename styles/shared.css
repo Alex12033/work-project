@@ -152,19 +152,20 @@ body {
 }
 
 #product-monitor img {
-  /* background: url(/work-project/img/Studio-Display.png); */
+  /* background: url(/work-project/img/Studio-Display.2png.png); */
   position: absolute;
-  left: 44.4%;
+  left: 15.7%;
   right: 0%;
-  top: 25%;
+  top: 12.6%;
 }
 
 #product-monitor h1 {
   position: absolute;
-  width: 550px;
-  height: 204px;
-  left: 120px;
-  top: 179px;
+  display: flex;
+  width: 35rem;
+  height: 12rem;
+  left: 7rem;
+  top: 10rem;
   font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
