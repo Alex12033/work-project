@@ -71,15 +71,14 @@
   align-items: center;
   justify-content: center;
 
-  position: absolute;
-  margin: 20px 0px 0px 320px;
-
   border-top-right-radius: 50%;
   border-bottom-left-radius: 50%; 
 
   width: 90px;
   height: 25px;
   background: #eebe42;
+  margin-left: 30%;
+  
 }
 
 .text-badge-pro {
@@ -153,6 +152,7 @@
   font-weight: 700;
   font-size: 13px;
   margin-bottom: 48px;
+  cursor: pointer;
 }
 
 .included-in-plan__item {
@@ -173,4 +173,55 @@
 
 .included-in-plan__item [info] {
   margin-left: 50px;
+  background:#ffffff;
+  border-radius: 50%;
+}
+
+@media (max-width: 1270px) {
+  .card {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .subscribe-button {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .pricing-cards {
+    flex-direction: column;
+  }
+
+  .badge-pro {
+    margin-left: 60%;
+    flex: 2;
+  }
+}
+
+@media (max-width: 1000px) {
+  .badge-pro {
+    margin-left: 60%;
+    flex: 2;
+  }
+}
+
+@media (max-width: 750px) {
+  .badge-pro {
+    margin-left: 40%;
+    flex: 2;
+  }
+}
+
+@media (max-width: 450px) {
+  .badge-pro {
+    margin-left: 20%;
+    flex: 2;
+  }
+
+  .text-badge-pro {
+    font-size: 7px;
+    font-weight: 300;
+    color: #ffffff;
+}
 }
