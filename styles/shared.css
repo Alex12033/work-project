@@ -43,17 +43,19 @@ body {
   margin: 0 auto;
 }
 
+/*--ШАПКА--------------------------------------------------------*/
+
 .main-header {
   position: fixed;
-  width: 100%;
-  left: 0;
+  width: 90%;
   top: 0;
-  margin: 3rem;
+  margin: 0;
   z-index: 50;
 }
 
 .header__container {
   display: flex;
+  width: 100%;
   min-height: 5rem;
   background: #001731;
   align-items: center;
@@ -61,12 +63,12 @@ body {
 }
 
 .main-nav {
-  position: relative;
+  position: absolute;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  left: 0;
+  padding-left: 1rem;
   margin: 0;
   padding-top: 0rem;
 }
@@ -74,6 +76,14 @@ body {
 .main-header__brand img {
   height: 4rem;
   display: flex;
+  left: 0;
+}
+
+.main-nav__items--all {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .main-nav__items {
@@ -85,25 +95,30 @@ body {
   list-style: none;
 }
 
+.main-nav__item--btns {
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-start; */
+  list-style: none;
+}
+
 .main-nav__item--start a {
   text-decoration: none;
+  margin-right: 1rem;
   color: white;
   font-weight: bold;
-  position: relative;
   display: flex;
-  justify-content: flex-end;
   background: #398bff;
   padding: 8px 12px;
   border-radius: 4px;
 }
 
 .main-nav__item--sign a {
-  position: relative;
+  display: flex;
+  right: 0;
   text-decoration: none;
   color: #398bff;
   font-weight: bold;
-  display: flex;
-  justify-content: flex-start;
   background: rgba(44, 130, 253, 0.15);
   padding: 8px 12px;
   border-radius: 4px;
@@ -131,7 +146,7 @@ body {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  padding: 0.2rem 0;
+  padding: 0.8rem 0;
 }
 
 .main-nav__item a:hover,
@@ -140,20 +155,79 @@ body {
   border-bottom: 5px solid white;
 }
 
-/* .product-monitor img {
-  position: absolute;
-  left: 15.7%;
-  right: 0%;
-  top: 12.6%;
-} */
+/*--БЛОК ПРОДУКТ-МОНИТОР--------------------------------------------------------*/
 
-/* .product-monitor h1 {
+.product-monitor {
+  position: relative;
+  display: flex;
+  height: 800px;
+  left: 0%;
+  right: 0%;
+  top: 1px;
+  background: #001731;
+  border-radius: 8px;
+}
+
+.product-monitor img {
   position: absolute;
   display: flex;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+.product-screen {
+  position: absolute;
+  display: flex;
+  right: 0;
+  bottom: 8rem;
+  z-index: 5;
+}
+
+.product-ellips {
+  position: absolute;
+  display: flex;
+  right: 10rem;
+  bottom: 0;
+  z-index: 1;
+}
+
+.product-blocks {
+  position: absolute;
+  display: block;
+  left: 5rem;
+  top: 8rem;
+}
+
+.product-btns {
+  display: flex;
+}
+
+.product-btns__nav span {
+  margin: 0 1rem;
+}
+
+.product-blocks p {
+  max-width: 25rem;
+  color: white;
+}
+
+.product-btns__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: medium;
+  list-style: none;
+}
+
+.product-monitor h1 {
+  /* position: absolute; */
+  /* display: flex; */
   width: 35rem;
   height: 12rem;
-  left: 5%;
-  top: 20%;
+  /* left: 5rem;
+  top: 8rem; */
   font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
@@ -161,20 +235,13 @@ body {
   line-height: 95%;
   letter-spacing: -0.03em;
   color: #ffffff;
-} */
+}
 
-/* .product-ellips {
-  position: absolute;
-  width: 869px;
-  height: 869px;
-  left: 455px;
-  top: 321px;
-} */
+/*--ФУТЕР--------------------------------------------------------*/
 
 .main-footer {
   display: flex;
   width: 100%;
-  /* height: 372px; */
   height: 100%;
   left: 0px;
   background: #031e3e;
