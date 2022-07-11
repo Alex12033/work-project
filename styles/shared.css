@@ -228,30 +228,21 @@ body {
 /*--ФУТЕР--------------------------------------------------------*/
 
 .main-footer {
-  display: flex;
-  width: 100%;
   background: #031e3e;
 }
 
+
 .main-footer__wrapp-all-info {
-  display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  /* align-items: left; */
-  margin: 0 auto;
-  /* width: 100%; */
-  width: 1280px;
 }
 
 .footer {
-  margin: 3rem auto;
   vertical-align: middle;
 }
 
 .main-footer__shared-bloc {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .main-footer__links-bloc {
@@ -341,7 +332,6 @@ ul {
 .input-btn:hover,
 .input-btn:active {
   cursor: pointer;
-  /* background: rgb(5, 46, 18); */
   background: #ccc;
   color: #398bff;
 }
