@@ -244,6 +244,8 @@ body {
 
 .main-footer__links-bloc {
   display: flex;
+  width: 50%;
+  justify-content: space-around;
 }
 
 .main-footer__classification-links {
@@ -280,10 +282,6 @@ ul {
 .main-footer__link a:hover,
 .main-footer__link a:active {
   color: #ccc;
-}
-
-.main-footer__subscription {
-  margin-left: 5rem;
 }
 
 .main-footer__subscription h3 {
