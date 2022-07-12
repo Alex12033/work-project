@@ -4,6 +4,7 @@
   "description": "landing page with registrtion functionality",
   "main": "index.js",
   "scripts": {
+    "dev": "index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

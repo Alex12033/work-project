@@ -43,19 +43,24 @@ body {
   width: 0px;
 }
 
-.border {
+.background-img {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 
+.border {
   border: 4px solid rgba(0, 0, 0, 0.4);
   margin: 6px auto;
   height: 98vh;
   width: 98vw;
   background: rgba(0, 0, 0, 0.4);
+  margin: 5px auto;
 }
 
 .form-container {
+  
   padding: 50px 20px;
   display: flex;
   align-items: center;
@@ -63,7 +68,7 @@ body {
   flex-direction: column;
   opacity: 1;
   background: rgba(109, 67, 128, 0.4);
-  width: 100%;
+  width: 26%;
 }
 
 .form-container form {
@@ -71,6 +76,7 @@ body {
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+  width: 100%;
 }
 
 .form-container form input {
@@ -81,6 +87,7 @@ body {
   margin-bottom: 25px;
   outline: none;
   border: none;
+  width: 100%;
 }
 
 .form-container form input::placeholder {

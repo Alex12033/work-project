@@ -1,7 +1,3 @@
-import axios from"axios";
-
-console.log(axios);
-
 let form = document.querySelector("form");
 
 form.addEventListener("submit", (e) => {
@@ -15,6 +11,5 @@ form.addEventListener("submit", (e) => {
 
     valuesInput[name] = value;
   });
-
-  let elem = valuesInput.map(el => el);
+  console.log(valuesInput);
 });
