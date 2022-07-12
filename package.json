@@ -1,0 +1,23 @@
+{
+  "name": "work-project",
+  "version": "1.0.0",
+  "description": "landing page with registrtion functionality",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alex12033/work-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alex12033/work-project/issues"
+  },
+  "homepage": "https://github.com/Alex12033/work-project#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.18.1"
+  }
+}
