@@ -1,27 +1,27 @@
 @font-face {
   font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Bold.ttf") format("truetype");
+  src: url("../../fonts/Gilroy-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: 900;
 }
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Medium.ttf") format("truetype");
+  src: url("../../fonts/Gilroy-Medium.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Regular.ttf") format("truetype");
+  src: url("../../fonts/Gilroy-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 200;
 }
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../fonts/Gilroy-SemiBold.ttf") format("truetype");
+  src: url("../../fonts/Gilroy-SemiBold.ttf") format("truetype");
   font-style: normal;
   font-weight: 600;
 }
@@ -30,7 +30,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Gilroy";
-  background: url(../../img/monitor.png) 70% -5% no-repeat;
+  background: url(../../img/Studio-Display.png) 100% 100% no-repeat;
 }
 
 *,
@@ -44,6 +44,10 @@ body {
 }
 
 .border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   border: 4px solid rgba(0, 0, 0, 0.4);
   margin: 6px auto;
   height: 98vh;
@@ -52,15 +56,14 @@ body {
 }
 
 .form-container {
-  padding: 50px 0px;
+  padding: 50px 20px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
   opacity: 1;
   background: rgba(109, 67, 128, 0.4);
-  width: 35%;
-  margin: 5% auto;
+  width: 100%;
 }
 
 .form-container form {
@@ -68,15 +71,16 @@ body {
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  width: 75%;
 }
 
 .form-container form input {
+  font-family: "Gilroi";
+  padding: 1px 5px;
   text-align: left;
   height: 25px;
-  width: 100%;
   margin-bottom: 25px;
   outline: none;
+  border: none;
 }
 
 .form-container form input::placeholder {
@@ -103,9 +107,3 @@ body {
   padding: 13px 30px;
   border: none;
 }
-
-/* .text-field__icon {
-    width: 100%;
-    display: flex;
-    align-items: center;
-} */
