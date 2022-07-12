@@ -43,38 +43,34 @@ body {
   margin: 0 auto;
 }
 
-/*--БЛОК ПРОДУКТ-БЭКГРАУНД--------------------------------------------------------*/
+/*--ШАПКА--БЛОК--ПРОДУКТ--БЭКГРАУНД--------------------------------------------------------*/
 .product-background {
   width: 100%;
+  height: 45rem;
   display: flex;
   justify-content: space-between;
   margin-bottom: 5rem;
   background: #001731;
   border-radius: 0px 0px 8px 8px;
+  overflow: hidden;
 }
 
 .product-blocks {
-  width: 50%;
-  margin: 0px 0px 200px 50px;
+  width: 39%;
+  margin: 0rem 0rem 19rem 3rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .product-blocks h1 {
   display: flex;
-
-  height: 12rem;
-  font-weight: 700;
-  font-size: 62px;
+  margin-top: 8rem;
+  font-weight: 600;
+  font-size: 58px;
   line-height: 95%;
   letter-spacing: -0.03em;
   color: #ffffff;
-}
-
-.product-img img {
-  width: 100%;
-  margin-top: 100px;
 }
 
 .product-btns {
@@ -82,11 +78,12 @@ body {
 }
 
 .product-btns__nav span {
+  color: rgba(255, 255, 255, 0.35);
   margin: 0 1rem;
 }
 
 .product-blocks p {
-  max-width: 25rem;
+  max-width: 20rem;
   color: white;
 }
 
@@ -99,22 +96,62 @@ body {
   list-style: none;
 }
 
+.product-btn__nav--now a {
+  width: 110px;
+  height: 32px;
+  color: white;
+  background: #398bff;
+  padding: 0.7rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.product-btn__nav--take a {
+  width: 110px;
+  height: 32px;
+  color: #398bff;
+  background: rgba(44, 130, 253, 0.15);
+  padding: 0.7rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.product-btn__nav--now a:hover,
+.product-btn__nav--now a:active {
+  color: #398bff;
+  background: white;
+  border: none;
+}
+
+.product-btn__nav--take a:hover,
+.product-btn__nav--take a:active {
+  color: #398bff;
+  background: white;
+  border: none;
+}
+
+.product-display img {
+  margin-top: 14.9%;
+  width: 100%;
+}
+
 /* --МЕНЮ------------------------------------------------------------------------ */
 
 .main-header {
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
-  z-index: 50;
+  z-index: 1;
 }
 
 .header__container {
+  position: fixed;
   display: flex;
   width: 100%;
   justify-content: flex-start;
   min-height: 5rem;
   background: #001731;
   align-items: center;
-  z-index: 60;
+  z-index: 2;
 }
 
 .main-nav {
@@ -158,33 +195,42 @@ body {
 .right-section {
   display: flex;
   justify-content: space-between;
-  width: 250px;
+  width: 19rem;
   margin-right: 20px;
 }
 
-.main-nav__item--start {
+.main-nav__item--start a {
+  width: 110px;
+  height: 32px;
   color: white;
   background: #398bff;
-  padding: 8px 12px;
+  padding: 0.7rem 1rem;
   border-radius: 4px;
-}
-
-.main-nav__item--start a {
-  color: white;
   text-decoration: none;
-  font-weight: bold;
-}
-
-.main-nav__item--sign {
-  color: #398bff;
-  background: rgba(44, 130, 253, 0.15);
-  padding: 8px 12px;
-  border-radius: 4px;
 }
 
 .main-nav__item--sign a {
+  width: 110px;
+  height: 32px;
+  color: #398bff;
+  background: rgba(44, 130, 253, 0.15);
+  padding: 0.7rem 1rem;
+  border-radius: 4px;
   text-decoration: none;
-  font-weight: bold;
+}
+
+.main-nav__item--start a:hover,
+.main-nav__item--start a:active {
+  color: #398bff;
+  background: white;
+  border: none;
+}
+
+.main-nav__item--sign a:hover,
+.main-nav__item--sign a:active {
+  color: #398bff;
+  background: white;
+  border: none;
 }
 
 .main-nav__item {
