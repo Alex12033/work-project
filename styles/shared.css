@@ -85,20 +85,10 @@ body {
   color: #ffffff;
 }
 
-.product-img {
-  display: flex;
-}
-
 .product-img img {
-  /* display: flex; */
-  /* left: 50.28%;
-  right: -1.99%;
-  top: 31.11%;
-  bottom: -4.51%; */
-  /* position: relative;  */
-  /* display: flex; */
-  bottom: 0;
-  /* margin-bottom: 0; */
+  display: flex;
+  margin-top: 16.6rem;
+  /* margin-right: 10rem; */
   max-width: 70%;
 }
 
