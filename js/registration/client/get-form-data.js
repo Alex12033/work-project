@@ -1,3 +1,7 @@
+import axios from"axios";
+
+console.log(axios);
+
 let form = document.querySelector("form");
 
 form.addEventListener("submit", (e) => {
