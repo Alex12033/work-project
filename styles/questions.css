@@ -3,6 +3,10 @@
   margin: 32px 0;
 }
 
+.accordion-title {
+    margin-bottom: 64px;
+}
+
 .accordion-title__question-mark {
   width: 32px;
   height: 32px;
