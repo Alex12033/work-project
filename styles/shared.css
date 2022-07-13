@@ -280,7 +280,7 @@ body {
 
 @media (max-width: 875px) {
   .product-blocks {
-    width: 76%;
+    width: 77%;
     margin: 7rem 0rem 0rem 3rem;
     display: flex;
     flex-wrap: wrap;
