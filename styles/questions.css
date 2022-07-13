@@ -54,13 +54,8 @@
 }
 
 .accordion__item--active .accordion__item_header-plus img {
-  display: none;
-}
-
-.accordion__item--active .accordion__item_header-plus {
-  width: 20px;
-  height: 2px;
-  background: #737f8e;
+  transform: rotate(45deg);
+  transition: 0.5s;
 }
 
 .accordion__item--active,
