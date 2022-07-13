@@ -10,6 +10,19 @@ accordionItem.forEach((item) => {
     item.parentElement.classList.toggle('accordion__item--active');
   });
 });
+
+//.................................
+
+accordionBlock.addEventListener('click', (e) => {
+    accordionItems.forEach((item) => {
+      if (e.targer.classList.contains('accordion__item--active')) {
+        accordionItems[i].classList.remove('accordion__item--active');
+      }
+      item.classList.add('accordion__item--active');
+    })
+  });
+
+
 //..................................
 // accordionItems.forEach((item) => {
 //   item.addEventListener('click', (event) => {
