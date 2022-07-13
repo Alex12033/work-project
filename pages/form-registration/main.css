@@ -60,7 +60,6 @@ body {
 }
 
 .form-container {
-  
   padding: 50px 20px;
   display: flex;
   align-items: center;
@@ -88,6 +87,67 @@ body {
   outline: none;
   border: none;
   width: 100%;
+}
+
+.error-msg {
+  display: none;
+  animation: error-msg-animation 0.4s forwards ease-in-out;
+  text-align: center;
+  padding: 5px 5px;
+  font-size: 15px;
+  font-weight: 100;
+  color: white;
+  border-radius: 2px;
+  height: 20%;
+  transform: translateY(-80px);
+  background: rgb(87, 81, 81);
+}
+
+@keyframes error-msg-animation {
+  0% {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+
+  40% {
+    transform: translateY(-50px);
+
+    opacity: 0.2;
+  }
+
+  80% {
+    transform: translateY(-70px);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
+
+.error-input {
+  animation: error-input-animation 0.3s ease-in-out forwards;
+  background: red;
+  opacity: 0.7;
+}
+
+@keyframes error-input-animation {
+  0% {
+    transform: translateX(5px);
+  }
+
+  80% {
+    transform: translateX(-5px);
+  }
+
+  95% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
 }
 
 .form-container form input::placeholder {
