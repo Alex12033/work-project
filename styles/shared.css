@@ -43,101 +43,10 @@ body {
   margin: 0 auto;
 }
 
-/*--ШАПКА--БЛОК--ПРОДУКТ--БЭКГРАУНД--------------------------------------------------------*/
-.product-background {
-  width: 100%;
-  height: 45rem;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5rem;
-  background: #001731;
-  border-radius: 0px 0px 8px 8px;
-  overflow: hidden;
-}
-
-.product-blocks {
-  width: 39%;
-  margin: 0rem 0rem 19rem 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.product-blocks h1 {
-  display: flex;
-  margin-top: 8rem;
-  font-weight: 600;
-  font-size: 58px;
-  line-height: 95%;
-  letter-spacing: -0.03em;
-  color: #ffffff;
-}
-
-.product-btns {
-  display: flex;
-}
-
-.product-btns__nav span {
-  color: rgba(255, 255, 255, 0.35);
-  margin: 0 1rem;
-}
-
-.product-blocks p {
-  max-width: 20rem;
-  color: white;
-}
-
-.product-btns__nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  font-size: medium;
-  list-style: none;
-}
-
-.product-btn__nav--now a {
-  width: 110px;
-  height: 32px;
-  color: white;
-  background: #398bff;
-  padding: 0.7rem 1rem;
-  border-radius: 4px;
-  text-decoration: none;
-}
-
-.product-btn__nav--take a {
-  width: 110px;
-  height: 32px;
-  color: #398bff;
-  background: rgba(44, 130, 253, 0.15);
-  padding: 0.7rem 1rem;
-  border-radius: 4px;
-  text-decoration: none;
-}
-
-.product-btn__nav--now a:hover,
-.product-btn__nav--now a:active {
-  color: #398bff;
-  background: white;
-  border: none;
-}
-
-.product-btn__nav--take a:hover,
-.product-btn__nav--take a:active {
-  color: #398bff;
-  background: white;
-  border: none;
-}
-
-.product-display img {
-  margin-top: 14.9%;
-  width: 100%;
-}
-
 /* --МЕНЮ------------------------------------------------------------------------ */
 
 .main-header {
+  display: flex;
   /* position: fixed; */
   width: 100%;
   z-index: 1;
@@ -156,7 +65,7 @@ body {
 
 .main-nav {
   display: flex;
-  width: 100%;
+  width: 80%;
   align-items: center;
   justify-content: flex-start;
   padding-left: 1rem;
@@ -194,8 +103,8 @@ body {
 
 .right-section {
   display: flex;
-  justify-content: space-between;
-  width: 19rem;
+  justify-content: space-around;
+  width: 15rem;
   margin-right: 20px;
 }
 
@@ -251,6 +160,105 @@ body {
   color: white;
   border-bottom: 5px solid white;
 }
+
+/*--ШАПКА--БЛОК--ПРОДУКТ--БЭКГРАУНД--------------------------------------------------------*/
+.product-background {
+  width: 100%;
+  display: flex;
+  /* flex-wrap: nowrap; */
+  justify-content: space-between;
+  margin-bottom: 5rem;
+  background: #001731;
+  border-radius: 0px 0px 8px 8px;
+  overflow: hidden;
+}
+
+.product-blocks {
+  width: 39%;
+  margin: 3rem 0rem 0rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+}
+
+.product-blocks h1 {
+  font-weight: 600;
+  font-size: 55px;
+  line-height: 95%;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.product-btns {
+  display: flex;
+}
+
+.product-btns__nav span {
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0 1rem;
+}
+
+.product-blocks p {
+  max-width: 20rem;
+  color: white;
+  /* margin: 0rem 0rem 0rem 0rem; */
+  justify-content: space-around;
+}
+
+.product-btns__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: medium;
+  list-style: none;
+}
+
+.product-btn__nav--now a {
+  width: 110px;
+  height: 32px;
+  color: white;
+  background: #398bff;
+  padding: 0.7rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.product-btn__nav--take a {
+  width: 110px;
+  height: 32px;
+  color: #398bff;
+  background: rgba(44, 130, 253, 0.15);
+  padding: 0.7rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.product-btn__nav--now a:hover,
+.product-btn__nav--now a:active {
+  color: #398bff;
+  background: white;
+  border: none;
+}
+
+.product-btn__nav--take a:hover,
+.product-btn__nav--take a:active {
+  color: #398bff;
+  background: white;
+  border: none;
+}
+
+.product-display {
+  display: flex;
+  margin: 5rem 0rem 0rem 0rem;
+  justify-content: end;
+  align-items: end;
+}
+
+.product-display img {
+  width: 95%;
+}
+
 /*--ФУТЕР--------------------------------------------------------*/
 
 .main-footer {
