@@ -70,10 +70,10 @@
   display: block;
 }
 
-/* .accordion__item--active {
+.accordion__item--active {
   animation: smoothy-display 1s ease-in-out forwards;
   display: block;
-} */
+}
 
 .accordion__contact-us {
   font-size: 1.25rem;
