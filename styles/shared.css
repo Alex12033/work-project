@@ -99,13 +99,13 @@ body {
     flex-direction: column;
     /* justify-content: flex-start; */
     align-items: center;
-    min-height: 9rem;
+    min-height: 7rem;
   }
   .main-nav {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: 1rem 1rem 1rem 0rem;
+    margin: 0rem 1rem 0.5rem 0rem;
   }
   .right-section {
     margin-left: 20px;
@@ -230,6 +230,14 @@ body {
   border-bottom: 5px solid white;
 }
 
+@media (max-width: 725px) {
+  .main-nav__item:hover,
+  .main-nav__item:active {
+    color: white;
+    border-bottom: 3px solid white;
+  }
+}
+
 /*--ШАПКА--БЛОК--ПРОДУКТ--БЭКГРАУНД--------------------------------------------------------*/
 
 .product-background {
@@ -272,10 +280,10 @@ body {
 
 @media (max-width: 875px) {
   .product-blocks {
-    width: 52%;
+    width: 76%;
     margin: 7rem 0rem 0rem 3rem;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     /* justify-content: space-between; */
     align-items: flex-start;
   }
@@ -289,6 +297,53 @@ body {
     margin: 0rem 0rem 0rem 0rem;
   }
 }
+
+@media (max-width: 725px) {
+  .product-blocks {
+    width: 100%;
+    margin: 9rem 0rem 0rem 0rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    align-content: center;
+  }
+
+  .product-blocks h1 {
+    width: 85%;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 95%;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    margin: 0rem 0rem 0rem 0rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 435px) {
+  .product-blocks {
+    width: 100%;
+    margin: 11rem 0rem 0rem 0rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    align-content: center;
+  }
+
+  .product-blocks h1 {
+    width: 85%;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 95%;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    margin: 0rem 0rem 0rem 0rem;
+    justify-content: center;
+  }
+}
+
 
 .product-btns {
   display: flex;
@@ -307,10 +362,11 @@ body {
 
 @media (max-width: 875px) {
   .product-blocks p {
+    font-size: 14px;
     max-width: 20rem;
     color: white;
     justify-content: space-around;
-    padding: 0rem 0rem 3rem 0rem;
+    margin: 1rem 1rem 2rem 1rem;
   }
 }
 
@@ -367,16 +423,17 @@ body {
 
 @media (max-width: 875px) {
   .product-btns__nav {
-    flex-direction: column;
+    /* width: 50%; */
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     height: 40%;
   }
   .product-btn__nav--now {
-    margin: 0rem 0rem 1rem 0rem;
+    margin: 0rem 0rem 0rem 0rem;
   }
   .product-btn__nav--take {
-    margin: 1rem 0rem 0rem 0rem;
+    margin: 0rem 0rem 0rem 0rem;
   }
 }
 
@@ -389,6 +446,18 @@ body {
 
 .product-display img {
   width: 90%;
+}
+
+@media (max-width: 725px) {
+  .product-display {
+    width: 0%;
+    z-index: -6;
+  }
+
+  .product-display img {
+    width: 0%;
+    z-index: -5;
+  }
 }
 
 /*--ФУТЕР--------------------------------------------------------*/
