@@ -65,11 +65,73 @@ body {
 
 .main-nav {
   display: flex;
-  width: 80%;
+  width: 76%;
   align-items: center;
   justify-content: flex-start;
   padding-left: 1rem;
   margin: 0;
+}
+
+/* ---АДАПТИВ--МЕНЮ-------------------------------------------------------------------- */
+
+@media (max-width: 970px) {
+  .main-nav {
+    width: 69%;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 875px) {
+  .main-nav {
+    width: 65%;
+  }
+  .right-section {
+    margin-right: -10rem;
+    /* justify-content: center; */
+    /* align-items: center;  */
+    /* margin-left: 30%;  */
+  }
+}
+
+@media (max-width: 725px) {
+  .header__container {
+    /* display: block; */
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    align-items: center;
+    min-height: 9rem;
+  }
+  .main-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 1rem 1rem 1rem 0rem;
+  }
+  .right-section {
+    margin-left: 20px;
+    /* justify-content: center; */
+    /* align-items: center;  */
+    /* margin-left: 30%;  */
+  }
+}
+
+@media (max-width: 435px) {
+  .header__container {
+    /* display: block; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 11rem;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    width: 100%;
+    margin: -1.5rem 1rem 1rem 1rem;
+  }
+  .main-nav__items {
+    margin: 0rem 0.5rem 0rem 0rem;
+  }
 }
 
 .main-header__brand img {
@@ -82,7 +144,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .main-nav__items {
@@ -92,6 +154,13 @@ body {
   align-content: center;
   font-size: medium;
   list-style: none;
+}
+
+@media (max-width: 380px) {
+  .main-nav__items {
+    flex-wrap: wrap;
+    /* margin: 0rem 0.5rem 0rem 0rem; */
+  }
 }
 
 .main-nav__item--btns {
@@ -105,7 +174,7 @@ body {
   display: flex;
   justify-content: space-around;
   width: 15rem;
-  margin-right: 20px;
+  margin-right: 30px;
 }
 
 .main-nav__item--start a {
@@ -162,10 +231,10 @@ body {
 }
 
 /*--ШАПКА--БЛОК--ПРОДУКТ--БЭКГРАУНД--------------------------------------------------------*/
+
 .product-background {
   width: 100%;
   display: flex;
-  /* flex-wrap: nowrap; */
   justify-content: space-between;
   margin-bottom: 5rem;
   background: #001731;
@@ -201,7 +270,6 @@ body {
 .product-blocks p {
   max-width: 20rem;
   color: white;
-  /* margin: 0rem 0rem 0rem 0rem; */
   justify-content: space-around;
 }
 
