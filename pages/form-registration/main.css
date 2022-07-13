@@ -79,14 +79,17 @@ body {
 }
 
 .form-container form input {
+  transition: 0.5s;
   font-family: "Gilroi";
   padding: 1px 5px;
   text-align: left;
   height: 25px;
   margin-bottom: 25px;
-  outline: none;
-  border: none;
   width: 100%;
+}
+
+.form-container form input:focus {
+  border: 2px solid #555;
 }
 
 .error-msg {
@@ -98,7 +101,6 @@ body {
   font-weight: 100;
   color: white;
   border-radius: 2px;
-  height: 20%;
   transform: translateY(-80px);
   background: rgb(87, 81, 81);
 }
@@ -128,8 +130,7 @@ body {
 
 .error-input {
   animation: error-input-animation 0.3s ease-in-out forwards;
-  background: red;
-  opacity: 0.7;
+  border: 2px solid rgb(212, 18, 18);
 }
 
 @keyframes error-input-animation {
