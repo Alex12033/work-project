@@ -1,18 +1,10 @@
 "use strict";
 
-let featuresBlock = document.querySelector(".features-left");
+function querySelectorHelper(selector) {
+  return document.querySelector(selector);
+}
 
-let gameImg = document.querySelector(".features-left .game-selection img");
-let browseImg = document.querySelector(".features-left .browse-solution img");
-let practiceImg = document.querySelector(".features-left .practice-mode img");
-
-let gameDescription = document.querySelector(".game-selection__description");
-let practicedDescription = document.querySelector(
-  ".practice-mode__description"
-);
-let browseDescription = document.querySelector(".browse-solution__description");
-
-featuresBlock.addEventListener("click", (event) => {
+querySelectorHelper(".features-left").addEventListener("click", (event) => {
   if (
     event.target.className === "game-selection__title" ||
     event.target.className === "game-selection__title title" ||
@@ -21,15 +13,15 @@ featuresBlock.addEventListener("click", (event) => {
     event.target.className === "features-img"
 
   ) {
-    gameDescription.classList.toggle("smoothy");
+    querySelectorHelper(".game-selection__description").classList.toggle("smoothy");
 
-    gameImg.classList.add("background-img");
+    querySelectorHelper(".features-left .game-selection img").classList.add("background-img");
 
-    browseImg.classList.remove("background-img");
-    practiceImg.classList.remove("background-img");
+    querySelectorHelper(".features-left .browse-solution img").classList.remove("background-img");
+    querySelectorHelper(".features-left .practice-mode img").classList.remove("background-img");
 
-    browseDescription.classList.remove("smoothy");
-    practicedDescription.classList.remove("smoothy");
+    querySelectorHelper(".browse-solution__description").classList.remove("smoothy");
+    querySelectorHelper(".practice-mode__description").classList.remove("smoothy");
   }
 
   if (
@@ -39,15 +31,15 @@ featuresBlock.addEventListener("click", (event) => {
     event.target.className === "browse-img background-img" ||
     event.target.className === "browse-img"
   ) {
-    browseDescription.classList.toggle("smoothy");
+    querySelectorHelper(".browse-solution__description").classList.toggle("smoothy");
 
-    browseImg.classList.add("background-img");
+    querySelectorHelper(".features-left .browse-solution img").classList.add("background-img");
 
-    gameImg.classList.remove("background-img");
-    practiceImg.classList.remove("background-img");
+    querySelectorHelper(".features-left .game-selection img").classList.remove("background-img");
+    querySelectorHelper(".features-left .practice-mode img").classList.remove("background-img");
 
-    gameDescription.classList.remove("smoothy");
-    practicedDescription.classList.remove("smoothy");
+    querySelectorHelper(".game-selection__description").classList.remove("smoothy");
+    querySelectorHelper(".practice-mode__description").classList.remove("smoothy");
   }
 
   if (
@@ -57,14 +49,14 @@ featuresBlock.addEventListener("click", (event) => {
     event.target.className === "practice-img background-img" ||
     event.target.className === "practice-img"
   ) {
-    practicedDescription.classList.toggle("smoothy");
+    querySelectorHelper(".practice-mode__description").classList.toggle("smoothy");
 
-    practiceImg.classList.add("background-img");
+    querySelectorHelper(".features-left .practice-mode img").classList.add("background-img");
 
-    gameImg.classList.remove("background-img");
-    browseImg.classList.remove("background-img");
+    querySelectorHelper(".features-left .game-selection img").classList.remove("background-img");
+    querySelectorHelper(".features-left .browse-solution img").classList.remove("background-img");
 
-    browseDescription.classList.remove("smoothy");
-    gameDescription.classList.remove("smoothy");
+    querySelectorHelper(".browse-solution__description").classList.remove("smoothy");
+    querySelectorHelper(".game-selection__description").classList.remove("smoothy");
   }
 });
