@@ -596,7 +596,6 @@ ul {
 
 @media (max-width: 970px) {
   .main-footer__shared-bloc {
-    display: flex;
     flex-direction: column;
   }
 
@@ -627,8 +626,12 @@ ul {
 }
 
 @media (max-width: 530px) {
+  .main-footer__shared-bloc {
+    margin: 0 auto;
+    }  
+
   .main-footer__links-bloc {
-    display: flex;
+    width: 100%;
     flex-direction: column;
   }
 
