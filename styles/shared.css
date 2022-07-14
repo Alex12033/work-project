@@ -283,7 +283,7 @@ body {
 @media (max-width: 875px) {
   .product-blocks {
     width: 83%;
-    margin: 7rem 0rem 0rem 3rem;
+    margin: 7rem 0rem 2rem 3rem;
     display: flex;
     flex-wrap: wrap;
     /* justify-content: space-between; */
@@ -361,6 +361,7 @@ body {
   max-width: 20rem;
   color: white;
   justify-content: space-around;
+  margin: 0rem 0rem 1rem 0rem
 }
 
 @media (max-width: 875px) {
