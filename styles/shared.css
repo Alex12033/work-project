@@ -61,6 +61,7 @@ body {
   background: #001731;
   align-items: center;
   z-index: 2;
+  top: 0px; /* ты забыл прибить header потолку */
 }
 
 .main-nav {

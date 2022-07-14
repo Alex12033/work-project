@@ -30,7 +30,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Gilroy";
-  background: url(../../img/Studio-Display.png) 100% 100% no-repeat;
+  background: url(../../assets/img/Studio-Display.png) 100% 100% no-repeat;
 }
 
 *,
@@ -52,7 +52,7 @@ body {
 
 .border {
   border: 4px solid rgba(0, 0, 0, 0.4);
-  margin: 6px auto;
+  margin: 10px auto;
   height: 98vh;
   width: 98vw;
   background: rgba(0, 0, 0, 0.4);
@@ -60,7 +60,6 @@ body {
 }
 
 .form-container {
-  
   padding: 50px 20px;
   display: flex;
   align-items: center;
@@ -80,14 +79,76 @@ body {
 }
 
 .form-container form input {
+  transition: 0.5s;
   font-family: "Gilroi";
   padding: 1px 5px;
   text-align: left;
   height: 25px;
   margin-bottom: 25px;
-  outline: none;
-  border: none;
   width: 100%;
+}
+
+.form-container form input:focus {
+  border: 2px solid #555;
+}
+
+.error-msg {
+  display: none;
+  animation: error-msg-animation 0.4s forwards ease-in-out;
+  text-align: center;
+  padding: 5px 5px;
+  font-size: 15px;
+  font-weight: 100;
+  color: white;
+  border-radius: 2px;
+  transform: translateY(-80px);
+  background: rgb(87, 81, 81);
+}
+
+@keyframes error-msg-animation {
+  0% {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+
+  40% {
+    transform: translateY(-50px);
+
+    opacity: 0.2;
+  }
+
+  80% {
+    transform: translateY(-70px);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
+
+.error-input {
+  animation: error-input-animation 0.3s ease-in-out forwards;
+  border: 2px solid rgb(212, 18, 18);
+}
+
+@keyframes error-input-animation {
+  0% {
+    transform: translateX(5px);
+  }
+
+  80% {
+    transform: translateX(-5px);
+  }
+
+  95% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
 }
 
 .form-container form input::placeholder {
@@ -114,3 +175,4 @@ body {
   padding: 13px 30px;
   border: none;
 }
+
