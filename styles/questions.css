@@ -43,6 +43,10 @@
   padding: 24px;
 }
 
+.accordion__item_header-plus {
+  padding-left: 16px;
+}
+
 .accordion__item:hover {
   cursor: pointer;
   background: #63ba3b;
@@ -107,4 +111,17 @@
     .accordion p {
         text-align: center;
     }
+}
+
+@media (max-width: 530px) {
+  .accordion-title__title {
+    font-size: 28px;
+}
+  .accordion__item_header {
+    font-size: 16px;
+  }
+
+  .accordion__contact-us {
+    font-size: 16px;
+  }
 }
