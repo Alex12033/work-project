@@ -1,8 +1,24 @@
 .our-story__container {
-    width: 100%;
-    height: 435px;
-    display: flex;
-    margin-bottom: 5rem;
-    background: #ebf5ff;
-    
+  width: 100%;
+  /* height: 435px; */
+  display: flex;
+  margin-bottom: 5rem;
+  background: #ebf5ff;
+}
+
+.our-story__left {
+  display: flex;
+  width: 55%;
+}
+
+.our-story__video {
+  width: 100%;
+}
+
+
+video {
+  width: 100%;
+  height: 19rem;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  margin: 0rem 0rem 0rem 0rem;
 }
