@@ -16,7 +16,10 @@ featuresBlock.addEventListener("click", (event) => {
   if (
     event.target.className === "game-selection__title" ||
     event.target.className === "game-selection__title title" ||
-    event.target.className === "game-selection"
+    event.target.className === "game-selection" ||
+    event.target.className === "features-img background-img" ||
+    event.target.className === "features-img"
+
   ) {
     gameDescription.classList.toggle("smoothy");
 
@@ -32,7 +35,9 @@ featuresBlock.addEventListener("click", (event) => {
   if (
     event.target.className === "browse-solution__title" ||
     event.target.className === "browse-solution__title title" ||
-    event.target.className === "browse-solution"
+    event.target.className === "browse-solution" ||
+    event.target.className === "browse-img background-img" ||
+    event.target.className === "browse-img"
   ) {
     browseDescription.classList.toggle("smoothy");
 
@@ -48,7 +53,9 @@ featuresBlock.addEventListener("click", (event) => {
   if (
     event.target.className === "practice-mode__title" ||
     event.target.className === "practice-mode__title title" ||
-    event.target.className === "practice-mode"
+    event.target.className === "practice-mode" || 
+    event.target.className === "practice-img background-img" ||
+    event.target.className === "practice-img"
   ) {
     practicedDescription.classList.toggle("smoothy");
 

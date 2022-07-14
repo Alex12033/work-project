@@ -31,7 +31,7 @@
 
 .game-selection__title {
   font-weight: bold;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .divider {
@@ -43,11 +43,16 @@
 }
 
 .game-selection__description {
-  font-size: 10px;
+  font-size: 20px;
   color: #001731;
   opacity: 0.3;
   display: none;
   transform: translateY(-100px);
+}
+
+.browse-solution__title {
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .browse-solution {
@@ -58,12 +63,17 @@
 }
 
 .browse-solution__description {
-    font-size: 10px;
-    color: #001731;
-    opacity: 0.3;
-    display: none;
-    transform: translateY(-100px);
-  }
+  font-size: 20px;
+  color: #001731;
+  opacity: 0.3;
+  display: none;
+  transform: translateY(-100px);
+}
+
+.practice-mode__title {
+  font-weight: bold;
+  font-size: 16px;
+}
 
 .practice-mode {
   cursor: pointer;
@@ -73,7 +83,7 @@
 }
 
 .practice-mode__description {
-  font-size: 10px;
+  font-size: 20px;
   color: #001731;
   opacity: 0.3;
   display: none;
@@ -142,12 +152,14 @@
   }
 }
 
-.background-img { /* THIS CLASS ADD BACKGROUND TO FEATURE ACARDEON IMAGE */
-    background: #001731;
-    transition: 1s ease-in-out;
+.background-img {
+  /* THIS CLASS ADD BACKGROUND TO FEATURE ACARDEON IMAGE */
+  background: #001731;
+  transition: 1s ease-in-out;
 }
 
-.smoothy { /* THIS CLASS ADD SMOOTH DISPLAY FOR ELEMENT ACARDEON*/
+.smoothy {
+  /* THIS CLASS ADD SMOOTH DISPLAY FOR ELEMENT ACARDEON*/
   animation: smoothy-display 1s ease-in-out forwards;
   display: block;
 }
