@@ -1,0 +1,15 @@
+.reviews-team {
+  width: 100%;
+}
+
+.reviews-team__background {
+  display: flex;
+  width: 116%;
+  margin: 0rem 0rem 4rem -7rem;
+}
+/* --СДЕАЛТЬ-АДАПТИВ-НАЧИНАЯ-C-1270px-- */
+
+.reviews-team__background img {
+  width: 100%;
+  margin: 0rem 0rem 0rem 0rem;
+}
