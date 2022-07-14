@@ -2,7 +2,7 @@ let acc = document.querySelector('.accordion');
 
 let selectedItem;
 
-acc.onclick = function (event) {
+acc.addEventListener('click', function (event) {
   let target = event.target;
 
   while (target != this) {
@@ -13,7 +13,7 @@ acc.onclick = function (event) {
     removeClass(target);
     target = target.parentNode;
   }
-};
+});
 
 function active(node) {
   if (selectedItem) {
