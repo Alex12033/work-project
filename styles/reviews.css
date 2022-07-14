@@ -2,21 +2,17 @@
   width: 100%;
 }
 
-.reviews-team__background {
-  display: flex;
-  width: 116%;
-  margin: 0rem 0rem 4rem -7rem;
-  z-index: -10;
-}
-/* --СДЕАЛТЬ-АДАПТИВ-НАЧИНАЯ-C-1270px-- */
-
-.reviews-team__background img {
-  width: 100%;
-  margin: 0rem 0rem 0rem 0rem;
+.reviews-team__container {
+  width: 113%;
+  background: #031e3e;
+  margin: -3rem -5rem 3rem -5rem;
 }
 
-.reviews-team__blocks--icon img {
-  width: 40%;
+.reviews-team__left {
+  width: 50%;
+}
+
+.reviews-team__image {
+  width: 50%;
   margin: 0rem 0rem 0rem 0rem;
-  z-index: 5;
 }
