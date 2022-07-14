@@ -6,10 +6,17 @@
   display: flex;
   width: 116%;
   margin: 0rem 0rem 4rem -7rem;
+  z-index: -10;
 }
 /* --СДЕАЛТЬ-АДАПТИВ-НАЧИНАЯ-C-1270px-- */
 
 .reviews-team__background img {
   width: 100%;
   margin: 0rem 0rem 0rem 0rem;
+}
+
+.reviews-team__blocks--icon img {
+  width: 40%;
+  margin: 0rem 0rem 0rem 0rem;
+  z-index: 5;
 }
