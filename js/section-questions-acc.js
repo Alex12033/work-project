@@ -10,15 +10,23 @@ acc.onclick = function (event) {
       active(target);
       return;
     }
+    removeClass(target);
     target = target.parentNode;
   }
 };
+
 function active(node) {
   if (selectedItem) {
     selectedItem.classList.remove('accordion__item--active');
   }
   selectedItem = node;
   selectedItem.classList.add('accordion__item--active');
+}
+
+function removeClass(node) {
+  if (selectedItem == node) {
+    selectedItem.classList.remove('accordion__item--active');
+  }
 }
 
 
