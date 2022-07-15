@@ -47,7 +47,7 @@ video {
   opacity: 0.75;
 }
 
-p {
+.our-story__text {
   display: flex;
   font-style: normal;
   font-weight: 400;
@@ -58,6 +58,13 @@ p {
 }
 
 .our-story__text--second {
+  display: flex;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  color: #001731;
+  opacity: 0.75;
   margin: 0rem 0rem 0rem 0rem;
 }
 
