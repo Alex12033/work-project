@@ -30,7 +30,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Gilroy";
-  background: url(../../assets/img/Studio-Display.png) 100% 100% no-repeat;
+  background: url(../../assets/img/Studio-Display.png);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+
+  background-size: contain;
+
+  animation: animate-body 0.4s backwards ease-in-out;
 }
 
 *,
@@ -41,9 +47,10 @@ body {
 
 :-webkit-scrollbar {
   width: 0px;
+  height: 0;
 }
 
-.background-img {
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,15 +58,13 @@ body {
 }
 
 .border {
-  border: 4px solid rgba(0, 0, 0, 0.4);
-  margin: 10px auto;
-  height: 98vh;
-  width: 98vw;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.4);
-  margin: 5px auto;
+  margin: 0px auto;
 }
 
 .form-container {
+  animation: animate-form 0.4s forwards ease-in-out;
   padding: 50px 20px;
   display: flex;
   align-items: center;
@@ -67,10 +72,19 @@ body {
   flex-direction: column;
   opacity: 1;
   background: rgba(109, 67, 128, 0.4);
-  width: 26%;
+  margin-top: 30px;
+  width: 350px;
+}
+
+@media (max-width: 450px) {
+  .form-container {
+    width: 300px;
+    margin-top: 20%;
+  }
 }
 
 .form-container form {
+  animation: animate-display_inputs 0.4s forwards ease-in-out;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -96,6 +110,7 @@ body {
   display: none;
   animation: error-msg-animation 0.4s forwards ease-in-out;
   text-align: center;
+  width: 100%;
   padding: 5px 5px;
   font-size: 15px;
   font-weight: 100;
@@ -129,7 +144,7 @@ body {
 }
 
 .error-input {
-  animation: error-input-animation 0.3s ease-in-out forwards;
+  animation: error-input-animation 0.4s ease-in-out forwards;
   border: 2px solid rgb(212, 18, 18);
 }
 
@@ -168,6 +183,7 @@ body {
 }
 
 .confirm-button {
+  animation: animate-display_btn 0.2s ease-in forwards;
   margin-top: 25px;
   background: #d52685;
   color: white;
@@ -176,3 +192,42 @@ body {
   border: none;
 }
 
+@keyframes animate-display_btn {
+  0% {
+    transform: translateY(100px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes animate-form {
+  0% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes animate-body {
+  0% {
+    transform: scale(0.98);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes animate-display_inputs {
+  0% {
+    transform: translateX(50px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
