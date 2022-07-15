@@ -2,7 +2,10 @@
   width: 100%;
 }
 
+/* ---1270px adaptive container need---------------------- */
+
 .reviews-team__container {
+  display: flex;
   width: 113%;
   background: #031e3e;
   margin: -3rem -5rem 3rem -5rem;
@@ -13,6 +16,7 @@
 }
 
 .reviews-team__image {
+  display: flex;
   width: 50%;
-  margin: 0rem 0rem 0rem 0rem;
+  margin: 3rem 0rem 0rem 7rem;
 }
