@@ -248,6 +248,7 @@ body {
   margin-bottom: 0rem;
   background: #001731;
   border-radius: 0px 0px 8px 8px;
+  z-index: 1;
   overflow: hidden;
 }
 
