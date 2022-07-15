@@ -1,4 +1,6 @@
 let form = document.querySelector("form");
+let btn = document.querySelector(".confirm-button");
+let loader = document.querySelector(".loader-form");
 
 function displayErrorMsg(display, elem, msg = "") {
   let errorDiv = document.querySelector(".error-msg");
@@ -59,11 +61,30 @@ function validatePassword(data) {
       "PLease enter the same password"
     );
   } else {
-    
   }
 }
 
-form.addEventListener("submit", (e) => {
+async function postData(data) {
+  btn.classList.add("disabled-button");
+  loader.style.display = "block";
+
+  await fetch("https://62cddbfda43bf780085fe7b3.mockapi.io/test", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  }).then((response) => {
+    if (!response.ok) throw new Error(response.statusText);
+
+    if (response.ok) {
+      btn.classList.remove("disabled-button");
+      loader.classList.add("hide-loader");
+    }
+  });
+}
+
+btn.addEventListener("click", (e) => {
   e.preventDefault();
 
   const fields = document.querySelectorAll("input");
@@ -72,11 +93,18 @@ form.addEventListener("submit", (e) => {
   fields.forEach((field) => {
     const { name, value } = field;
 
-    valuesInput[name] = value == "" ? false : value;
+    valuesInput[name] = value == "" ? false : value; //if input empty we save false in object else we save value of input
   });
 
   validateEmptyInput(valuesInput);
   validatePhoneNumber(valuesInput);
   validateEmail(valuesInput);
   validatePassword(valuesInput);
+
+  //if validate successfull then post data on server
+  if (valuesInput["first-name"] === false) {
+    console.log("not request");
+  } else {
+    postData(valuesInput);
+  }
 });
