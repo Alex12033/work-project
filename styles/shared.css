@@ -136,6 +136,22 @@ body {
   border: none;
 }
 
+.main-nav__item--start {
+  animation: wiggle 400ms 3s 8 ease-out none;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotateZ(0);
+  }
+  50% {
+    transform: rotateZ(-10deg);
+  }
+  100% {
+    transform: rotateZ(10deg);
+  }
+}
+
 .main-nav__item--sign a:hover,
 .main-nav__item--sign a:active {
   color: #398bff;
