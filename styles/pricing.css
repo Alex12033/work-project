@@ -5,11 +5,6 @@
   margin-top: 60px;
 }
 
-.pricing-cards {
-  margin-top: 50px;
-  margin-bottom: 100px;
-}
-
 .pricing-title h2 {
   font-weight: bold;
   height: 20px;
@@ -25,6 +20,7 @@
 .pricing .pricing-cards {
   display: flex;
   justify-content: space-between;
+  margin: 50px 0px 100px 0px;
 }
 
 .card {
@@ -72,19 +68,18 @@
   justify-content: center;
 
   border-top-right-radius: 50%;
-  border-bottom-left-radius: 50%; 
+  border-bottom-left-radius: 50%;
 
   width: 90px;
   height: 25px;
   background: #eebe42;
   margin-left: 30%;
-  
 }
 
 .text-badge-pro {
-    font-size: 10px;
-    font-weight: 700;
-    color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .card-title {
@@ -173,7 +168,7 @@
 
 .included-in-plan__item [info] {
   margin-left: 50px;
-  background:#ffffff;
+  background: #ffffff;
   border-radius: 50%;
 }
 
@@ -186,7 +181,7 @@
 
   .subscribe-button {
     width: 50%;
-    margin: 0 auto;
+    margin: 20px auto;
   }
 
   .pricing-cards {
@@ -223,5 +218,9 @@
     font-size: 7px;
     font-weight: 300;
     color: #ffffff;
-}
+  }
+
+  .card {
+    width: 80%;
+  }
 }
