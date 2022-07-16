@@ -16,14 +16,15 @@
 }
 
 .reviews-team__image {
-  /* max-width: 70%; */
-  width: 60%;
-  /* margin: 3rem 0rem 0rem 7rem; */
+  width: 70%;
+  align-items: flex-end;
+  /* width: 60%; */
+  margin: 3rem 0rem 0rem 0rem;
 }
 
 .reviews-team__right {
   display: flex;
-  width: 35%;
+  width: 50%;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -75,6 +76,32 @@
   animation: wiggle 400ms 3s 8 ease-out none;
 }
 
+.reviews-client {
+  padding: 5rem 0 5rem 0;
+  background: #f6f7fb;
+  margin: 0rem 0rem 5rem 0;
+}
+
+.reviews-client__block {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.reviews-client_title-title {
+  font-size: 42px;
+  margin: 0 0 30px 0;
+}
+
+.reviews-client__reviews {
+  display: flex;
+  justify-content: center;
+}
+
+.reviews-client__reviews img {
+  max-width: 100%;
+  min-width: 300px;
+}
+
 @media (max-width: 1270px) {
   .reviews-team__right {
     padding: 2rem 0rem 2rem 0rem;
@@ -110,60 +137,55 @@
   }
 }
 
-@media (max-width: 875px) {
-  /* .reviews-team__image {
-    /* width: 60%; */
-  } 
-
-
-.reviews-client {
-  padding: 5rem 0 5rem 0;
-  background: #F6F7FB;
-  margin: 0rem 0rem 5rem 0;    
-}
-
-.reviews-client__block {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.reviews-client_title-title {
-  font-size: 42px;
-  margin: 0 0 30px 0;
-}
-
-.reviews-client__reviews {
-  display: flex;
-  justify-content: center;
-}
-
-.reviews-client__reviews img {
-  max-width: 100%;
-  min-width: 300px;
-}
-
 @media (max-width: 1020px) {
   .reviews-client__reviews {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .reviews-client__reviews img {
-      max-width: 80%;
-      min-width: 200px;
+    max-width: 80%;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 875px) {
+  .reviews-team__image {
+    width: 70%;
+  }
+}
+
+@media (max-width: 740px) {
+  .reviews-team__image {
+    width: 85%;
   }
 }
 
 @media (max-width: 725px) {
   .reviews-client__reviews {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .reviews-client__reviews img {
-      max-width: 80%;
-      min-width: 200px;
+    max-width: 80%;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 670px) {
+  .reviews-team__all {
+    width: 60%
+  }
+
+  .reviews-team__left {
+    display: none;
+  }
+
+  .reviews-team__right {
+    display: flex;
+    width: 100%;
   }
 }
 
@@ -178,4 +200,3 @@
     transform: rotateZ(10deg);
   }
 }
-
