@@ -39,6 +39,31 @@
   width: 100%;
 }
 
+.toggle-button {
+  display: none;
+  width: 48px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 10px;
+  right: 0;
+  vertical-align: middle;
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button__bar {
+  width: 100%;
+  height: 3px;
+  background: white;
+  display: block;
+  margin: 10px 0;
+}
+
 .mobile-nav__close {
   position: fixed;
   height: 55px;
@@ -110,32 +135,7 @@
   text-decoration: none;
 }
 
-.toggle-button {
-  display: none;
-  width: 48px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-right: 10px;
-  right: 0;
-  vertical-align: middle;
-}
-
-.toggle-button:focus {
-  outline: none;
-}
-
-.toggle-button__bar {
-  width: 100%;
-  height: 3px;
-  background: white;
-  display: block;
-  margin: 10px 0;
-}
-
-@media (max-width: 500px) {
+@media (max-width: 520px) {
   .header__container {
     min-height: 55px;
     flex-direction: row;
