@@ -2,6 +2,14 @@ let form = document.querySelector("form");
 let btn = document.querySelector(".confirm-button");
 let loader = document.querySelector(".loader-form");
 
+const accumulateErrorValidation = {
+  //this object gets flag true in each field after succssesfull validation each input
+  phone: false,
+  email: false,
+  password: false,
+  confirmPassword: false,
+};
+
 function displayErrorMsg(display, elem, msg = "") {
   let errorDiv = document.querySelector(".error-msg");
 
@@ -32,7 +40,9 @@ function validatePhoneNumber(data) {
   let pattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
   if (data["phone-number"] !== false && pattern.test(data["phone-number"])) {
+    accumulateErrorValidation.phone = true;
   } else {
+    accumulateErrorValidation.phone = false;
     displayErrorMsg("block", "phone-number", " Please enter correct phone ");
   }
 }
@@ -41,26 +51,30 @@ function validateEmail(data) {
   let pattern =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  if (data["phone-number"] !== false && pattern.test(data["email"])) {
+  if (pattern.test(data["email"])) {
+    accumulateErrorValidation.email = true;
   } else {
+    accumulateErrorValidation.email = false;
     displayErrorMsg("block", "email", " Please enter correct email ");
   }
 }
 
 function validatePassword(data) {
   if (
-    data["password"] !== data["confirm-password"] &&
-    data["phone-number"] !== false &&
-    data["email"] !== false &&
-    data["last-name"] !== false &&
-    data["first-name "] !== false //this need for not display error empty fields
+    data["password"] !== false &&
+    data["confirm-password"] !== false &&
+    data["password"] === data["confirm-password"]
   ) {
+    accumulateErrorValidation.password = true;
+    accumulateErrorValidation.confirmPassword = true;
+  } else {
+    accumulateErrorValidation.password = false;
+    accumulateErrorValidation.confirmPassword = false
     displayErrorMsg(
       "block",
       "confirm-password",
       "PLease enter the same password"
     );
-  } else {
   }
 }
 
@@ -78,8 +92,8 @@ async function postData(data) {
     if (!response.ok) throw new Error(response.statusText);
 
     if (response.ok) {
-      btn.classList.remove("disabled-button");
       loader.classList.add("hide-loader");
+      // window.location.href = "https://work-project-62855.web.app/index.html";
     }
   });
 }
@@ -102,9 +116,16 @@ btn.addEventListener("click", (e) => {
   validatePassword(valuesInput);
 
   //if validate successfull then post data on server
-  if (valuesInput["first-name"] === false) {
-    console.log("not request");
-  } else {
+
+  if (
+    valuesInput["first-name"] != false &&
+    valuesInput["last-name"] != false &&
+    accumulateErrorValidation.phone == true &&
+    accumulateErrorValidation.email == true &&
+    accumulateErrorValidation.password == true &&
+    accumulateErrorValidation.confirmPassword == true
+  ) {
     postData(valuesInput);
   }
+  console.log(accumulateErrorValidation);
 });
