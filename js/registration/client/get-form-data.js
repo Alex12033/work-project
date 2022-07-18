@@ -93,7 +93,10 @@ async function postData(data) {
 
     if (response.ok) {
       loader.classList.add("hide-loader");
-      // window.location.href = "https://work-project-62855.web.app/index.html";
+      
+      setTimeout(() => {
+        window.location.href = "https://work-project-62855.web.app/index.html";
+      }, 2000);
     }
   });
 }
