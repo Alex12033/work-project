@@ -1,29 +1,29 @@
 /* here will be styles which use on more then one page */
 
 @font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Bold.ttf") format("truetype");
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Bold.ttf') format('truetype');
   font-style: normal;
   font-weight: 900;
 }
 
 @font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Medium.ttf") format("truetype");
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Medium.ttf') format('truetype');
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Regular.ttf") format("truetype");
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Regular.ttf') format('truetype');
   font-style: normal;
   font-weight: 200;
 }
 
 @font-face {
-  font-family: "Gilroy";
-  src: url("../fonts/Gilroy-SemiBold.ttf") format("truetype");
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-SemiBold.ttf') format('truetype');
   font-style: normal;
   font-weight: 600;
 }
@@ -31,7 +31,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
 }
 
 :-webkit-scrollbar {
@@ -110,8 +110,6 @@ body {
 }
 
 .main-nav__item--start a {
-  width: 110px;
-  height: 32px;
   color: white;
   background: #398bff;
   padding: 0.7rem 1rem;
@@ -121,8 +119,6 @@ body {
 }
 
 .main-nav__item--sign a {
-  width: 110px;
-  height: 32px;
   color: #398bff;
   background: rgba(44, 130, 253, 0.15);
   padding: 0.7rem 1rem;
@@ -165,8 +161,7 @@ body {
   margin: 0 1rem;
 }
 
-.main-nav__item a,
-.mobile-nav__item a {
+.main-nav__item a {
   display: flex;
   text-decoration: none;
   color: white;
@@ -202,29 +197,34 @@ body {
 
 @media (max-width: 725px) {
   .header__container {
-    /* display: block; */
-    flex-direction: column;
-    /* justify-content: flex-start; */
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    min-height: 5.5rem;
+    min-height: 55px;
   }
+
   .main-nav {
     display: flex;
-    justify-content: center;
-    width: 105%;
-    margin: -0.5rem 0rem -0.5rem 0rem;
+    justify-content: flex-start;
+    padding: 0;
   }
 
   .main-header__brand img {
-    height: 3rem;
-    margin: 0rem -1rem 0rem 0rem;
+    height: 40px;
+  }
+
+  .main-nav__items {
+    margin-right: 5px;
+  }
+  .main-nav__item {
+    margin: 0 4px;
   }
 
   .main-nav__item a,
   .mobile-nav__item a {
     color: white;
     font-weight: bold;
-    padding: 0.4rem 0;
+    padding: 0;
   }
 
   .main-nav__item:hover,
@@ -238,45 +238,18 @@ body {
   }
 
   .right-section {
-    margin: 0rem 0rem 0rem 0rem;
-    /* justify-content: center; */
-    /* align-items: center;  */
-    /* margin-left: 30%;  */
-  }
-}
-
-@media (max-width: 435px) {
-  .header__container {
-    /* display: block; */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 5rem;
+    width: auto;
+    justify-content: flex-end;
+    margin: 0 5px 0 0;
   }
 
-  .main-nav {
-    flex-direction: column;
-    width: 110%;
-    margin: -1.5rem 1rem 0rem 1rem;
+  .main-nav__item--start a {
+    padding: 5px;
   }
 
-  .main-nav__item {
-    margin: 0.5rem;
-  }
-
-  .main-header__brand img {
-    display: none;
-  }
-
-  .main-nav__items {
-    margin: 0rem 0rem 0rem -0.5rem;
-  }
-}
-
-@media (max-width: 375px) {
-  .main-nav__items {
-    flex-wrap: wrap;
-    /* margin: 0rem 0.5rem 0rem 0rem; */
+  .main-nav__item--sign a {
+    padding: 5px;
+    margin: 0 5px;
   }
 }
 
