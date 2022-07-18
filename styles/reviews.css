@@ -30,8 +30,13 @@
   align-items: flex-start;
 }
 
-.reviews-team__icon img {
+.reviews-team__icon {
   display: flex;
+  transition: 0.5s;
+}
+
+.reviews-team__icon:hover {
+  transform: scale(1.3);
 }
 
 .reviews-team__text {
@@ -42,6 +47,11 @@
   line-height: 110%;
   letter-spacing: -0.03em;
   color: #ffffff;
+  transition: 0.5s;
+}
+
+.reviews-team__text:hover {
+  transform: scale(1.3);
 }
 
 .reviews-team__info {
@@ -51,6 +61,11 @@
   font-size: 18px;
   line-height: 145%;
   color: #aac0e0;
+  transition: 0.5s;
+}
+
+.reviews-team__info:hover {
+  transform: scale(1.1);
 }
 
 .reviews-team__btn a {
@@ -76,6 +91,8 @@
   animation: wiggle 400ms 3s 8 ease-out none;
 }
 
+/* ---REVIEWS-CLIENT------------------------------------------ */
+
 .reviews-client {
   padding: 5rem 0 5rem 0;
   background: #f6f7fb;
@@ -100,6 +117,11 @@
 .reviews-client__reviews img {
   max-width: 100%;
   min-width: 300px;
+  transition: 0.3s;
+}
+
+.reviews-client__reviews img:hover {
+  transform: scale(1.3);
 }
 
 @media (max-width: 1270px) {
