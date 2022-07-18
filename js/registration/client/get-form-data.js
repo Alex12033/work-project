@@ -79,6 +79,7 @@ function validatePassword(data) {
 }
 
 async function postData(data) {
+  console.log("data");
   btn.classList.add("disabled-button");
   loader.style.display = "block";
 
@@ -89,14 +90,15 @@ async function postData(data) {
     },
     body: JSON.stringify(data),
   }).then((response) => {
-    if (!response.ok) throw new Error(response.statusText);
+    if (!response.ok) {
+      console.log(response, "skdjnvksjdvkjsbn");
+    }
 
     if (response.ok) {
       loader.classList.add("hide-loader");
-      
-      setTimeout(() => {
-        window.location.href = "https://work-project-62855.web.app/index.html";
-      }, 2000);
+      // setTimeout(() => {
+      //   window.location.href = "https://work-project-62855.web.app/index.html";
+      // }, 2000);
     }
   });
 }
@@ -130,5 +132,4 @@ btn.addEventListener("click", (e) => {
   ) {
     postData(valuesInput);
   }
-  console.log(accumulateErrorValidation);
 });

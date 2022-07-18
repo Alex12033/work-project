@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "work-project",
   "version": "1.0.0",
   "description": "landing page with registrtion functionality",
@@ -19,6 +20,8 @@
   "homepage": "https://github.com/Alex12033/work-project#readme",
   "dependencies": {
     "axios": "^0.27.2",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "fetch": "^1.1.0",
+    "node-fetch": "^3.2.8"
   }
 }
