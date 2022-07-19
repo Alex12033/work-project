@@ -90,7 +90,7 @@ async function postData(data) {
   loader.style.display = "block";
   //"https://work-project-62855.web.app/js/registration/server/data-from-client.js/login"
   await fetch(
-    "https://work-project-62855.web.app/js/registration/server/data-from-client.js/login",
+    "http://localhost:3000/login",
     {
       method: "POST",
       headers: {
@@ -107,8 +107,9 @@ async function postData(data) {
       loader.classList.add("hide-loader");
       msgAfterSignUp.style.display = "block";
       setTimeout(() => {
-        window.location.href = "https://work-project-62855.web.app/index.html";
-      }, 3000);
+        //https://work-project-62855.web.app/index.html
+        window.location.href = "C:/Users/Александр/OneDrive/Робочий стіл/work-project/index.html";
+      }, 2000);
     }
   });
 }
