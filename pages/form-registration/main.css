@@ -84,6 +84,7 @@ body {
 }
 
 .form-container form {
+  position: relative;
   animation: animate-display_inputs 0.4s forwards ease-in-out;
   display: flex;
   align-items: center;
@@ -106,18 +107,50 @@ body {
   border: 2px solid #555;
 }
 
+.msg-after-registration {
+  display: none;
+  animation: msg-after .7s forwards ease-in;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  background: rgba(240,113,0, 0.8);
+  padding: 30px 100px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+}
+
+@keyframes msg-after{
+  from {
+    opacity: 0.7;
+    border-radius: 5px 10px;
+    top: 45%;
+  }
+  to {
+    opacity: 0.9;
+    border-radius: 10px 55px;
+    top: 50%;
+  }
+}
+
+
 .error-msg {
   display: none;
+  position: absolute;
+  top: 0%;
   animation: error-msg-animation 0.4s forwards ease-in-out;
   text-align: center;
   width: 100%;
-  padding: 5px 5px;
+  padding: 2px 2px;
   font-size: 15px;
-  font-weight: 100;
+  font-weight: 600;
   color: white;
   border-radius: 2px;
   transform: translateY(-80px);
-  background: rgb(87, 81, 81);
+  background: rgba(240,113,0, 0.8);
 }
 
 @keyframes error-msg-animation {
@@ -138,7 +171,7 @@ body {
   }
 
   100% {
-    transform: translateY(-20px);
+    transform: translateY(-30px);
     opacity: 1;
   }
 }
@@ -190,6 +223,72 @@ body {
   cursor: pointer;
   padding: 13px 30px;
   border: none;
+}
+
+.disabled-button {
+  background: #555;
+  transition: 0.6s ease-in;
+}
+
+.loader-form {
+  display: none;
+  width: 150px;
+  height: 150px;
+  z-index: 10;
+  animation: loader-smooth 0.6s forwards ease-in;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: 1s ease-out;
+  transform: translate(-50%, -50%);
+  background-color: #212529;
+  border: 5px solid black;
+  border-radius: 100px;
+}
+
+@keyframes loader-smooth {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  50% {
+    top: 20%;
+    opacity: 0.5;
+  }
+
+  80% {
+    top: -10%;
+    opacity: 0.7;
+  }
+
+  100% {
+    top: 25%;
+    opacity: 0.8;
+  }
+}
+
+.hide-loader {
+  animation: hide-loader-smooth 0.6s forwards ease-out;
+}
+
+@keyframes hide-loader-smooth {
+  100% {
+    top: 25%;
+    opacity: 0;
+  }
+  80% {
+    top: -10%;
+    opacity: 0.3;
+  }
+  50% {
+    top: 20%;
+    opacity: 0.5;
+  }
+  0% {
+    top: 0;
+    opacity: 0.8;
+  }
 }
 
 @keyframes animate-display_btn {
