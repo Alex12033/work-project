@@ -24,7 +24,6 @@
 .game-selection {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   border-radius: 2px;
   padding: 15px 15px 15px 15px;
   box-shadow: 1px 1px 1px 2px rgba(81, 79, 79, 0.1);
@@ -44,13 +43,12 @@
   color: #001731;
   opacity: 0.3;
   display: none;
-  transform: translateY(-100px);
+  transform: translateY(-50px);
 }
 
 .browse-solution {
   margin-bottom: 10px;
   padding: 15px 15px;
-  cursor: pointer;
   box-shadow: 1px 3px 1px 1px rgba(81, 79, 79, 0.1);
 }
 
@@ -59,11 +57,10 @@
   color: #001731;
   opacity: 0.3;
   display: none;
-  transform: translateY(-100px);
+  transform: translateY(-50px);
 }
 
 .practice-mode {
-  cursor: pointer;
   margin-bottom: 30px;
   padding: 15px 15px;
   box-shadow: 1px 1px 1px 1px rgba(81, 79, 79, 0.1);
@@ -74,7 +71,7 @@
   color: #001731;
   opacity: 0.3;
   display: none;
-  transform: translateY(-100px);
+  transform: translateY(-50px);
 }
 
 .feedback {
@@ -139,6 +136,7 @@
   }
 }
 
+
 .background-img {
   /* THIS CLASS ADD BACKGROUND TO FEATURE ACARDEON IMAGE */
   background: #001731;
@@ -147,7 +145,7 @@
 
 .smoothy {
   /* THIS CLASS ADD SMOOTH DISPLAY FOR ELEMENT ACARDEON*/
-  animation: smoothy-display 1s ease-in-out forwards;
+  animation: smoothy-display 1s ease-out forwards;
   display: block;
 }
 

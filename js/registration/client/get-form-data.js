@@ -1,6 +1,7 @@
 let form = document.querySelector("form");
 let btn = document.querySelector(".confirm-button");
 let loader = document.querySelector(".loader-form");
+let msgAfterSignUp = document.querySelector(".msg-after-registration");
 
 const accumulateErrorValidation = {
   //this object gets flag true in each field after succssesfull validation each input
@@ -20,10 +21,16 @@ function displayErrorMsg(display, elem, msg = "") {
 
   errorDiv.innerHTML += `${msg} <br>`;
 
+  btn.classList.add("disabled-button");
+  btn.setAttribute("disabled", "disabled");
+
   setTimeout(() => {
     errorDiv.style.display = "none";
     errorDiv.innerHTML = "";
     input.classList.remove("error-input");
+
+    btn.removeAttribute("disabled", "disabled");
+    btn.classList.remove("disabled-button");
   }, 4000);
 }
 
@@ -69,7 +76,7 @@ function validatePassword(data) {
     accumulateErrorValidation.confirmPassword = true;
   } else {
     accumulateErrorValidation.password = false;
-    accumulateErrorValidation.confirmPassword = false
+    accumulateErrorValidation.confirmPassword = false;
     displayErrorMsg(
       "block",
       "confirm-password",
@@ -79,26 +86,29 @@ function validatePassword(data) {
 }
 
 async function postData(data) {
-  console.log("data");
   btn.classList.add("disabled-button");
   loader.style.display = "block";
-
-  await fetch("https://62cddbfda43bf780085fe7b3.mockapi.io/test", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  }).then((response) => {
+  //"https://work-project-62855.web.app/js/registration/server/data-from-client.js/login"
+  await fetch(
+    "https://work-project-62855.web.app/js/registration/server/data-from-client.js/login",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }
+  ).then((response) => {
     if (!response.ok) {
       console.log(response, "skdjnvksjdvkjsbn");
     }
 
     if (response.ok) {
       loader.classList.add("hide-loader");
-      // setTimeout(() => {
-      //   window.location.href = "https://work-project-62855.web.app/index.html";
-      // }, 2000);
+      msgAfterSignUp.style.display = "block";
+      setTimeout(() => {
+        window.location.href = "https://work-project-62855.web.app/index.html";
+      }, 3000);
     }
   });
 }

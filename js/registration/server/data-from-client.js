@@ -22,15 +22,11 @@ app.get("/", (req, res) => {
 
 //Route that handles login logic
 app.post("/login", (req, res) => {
-  console.log(req.body.email);
-});
-
-//Route that handles signup logic
-app.post("/signup", (req, res) => {
   console.log(req.body);
+  res.sendStatus(200);
 });
 
 //Start your server on a specified port
-app.listen(port, () => {
-  console.log(`Server is runing on port ${port}`);
+app.listen(process.env.PORT || port, () => {
+  console.log(`Server is runing on port ${port}`); 
 });

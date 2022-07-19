@@ -4,9 +4,9 @@
   z-index: 101;
   background: #001731;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   justify-content: center;
-    animation: slide-burger 1s forwards ease-in-out;
+  animation: slide-burger 1s forwards ease-in-out;
 }
 
 @keyframes slide-burger {

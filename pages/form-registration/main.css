@@ -107,6 +107,36 @@ body {
   border: 2px solid #555;
 }
 
+.msg-after-registration {
+  display: none;
+  animation: msg-after .7s forwards ease-in;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  background: rgba(240,113,0, 0.8);
+  padding: 30px 100px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+}
+
+@keyframes msg-after{
+  from {
+    opacity: 0.7;
+    border-radius: 5px 10px;
+    top: 45%;
+  }
+  to {
+    opacity: 0.9;
+    border-radius: 10px 55px;
+    top: 50%;
+  }
+}
+
+
 .error-msg {
   display: none;
   position: absolute;
@@ -196,9 +226,8 @@ body {
 }
 
 .disabled-button {
-  display: disabled;
   background: #555;
-  transition: 1s ease-in;
+  transition: 0.6s ease-in;
 }
 
 .loader-form {
@@ -206,7 +235,7 @@ body {
   width: 150px;
   height: 150px;
   z-index: 10;
-  animation: loader-smooth 0.7s forwards ease-in;
+  animation: loader-smooth 0.6s forwards ease-in;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -240,7 +269,7 @@ body {
 }
 
 .hide-loader {
-  animation: hide-loader-smooth 1s forwards ease-out;
+  animation: hide-loader-smooth 0.6s forwards ease-out;
 }
 
 @keyframes hide-loader-smooth {
