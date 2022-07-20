@@ -46,11 +46,11 @@ function validateEmptyInput(data) {
 function validatePhoneNumber(data) {
   let pattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
-  if (data["phone-number"] !== false && pattern.test(data["phone-number"])) {
+  if (data["phone"] !== false && pattern.test(data["phone"])) {
     accumulateErrorValidation.phone = true;
   } else {
     accumulateErrorValidation.phone = false;
-    displayErrorMsg("block", "phone-number", " Please enter correct phone ");
+    displayErrorMsg("block", "phone", " Please enter correct phone ");
   }
 }
 
@@ -69,8 +69,8 @@ function validateEmail(data) {
 function validatePassword(data) {
   if (
     data["password"] !== false &&
-    data["confirm-password"] !== false &&
-    data["password"] === data["confirm-password"]
+    data["confirmPassword"] !== false &&
+    data["password"] === data["confirmPassword"]
   ) {
     accumulateErrorValidation.password = true;
     accumulateErrorValidation.confirmPassword = true;
@@ -79,7 +79,7 @@ function validatePassword(data) {
     accumulateErrorValidation.confirmPassword = false;
     displayErrorMsg(
       "block",
-      "confirm-password",
+      "confirmPassword",
       "PLease enter the same password"
     );
   }
@@ -88,7 +88,7 @@ function validatePassword(data) {
 async function postData(data) {
   btn.classList.add("disabled-button");
   loader.style.display = "block";
-  //"https://work-project-62855.web.app/js/registration/server/data-from-client.js/login"
+  //"https://work-project-62855.web.app/js/registration/server/server.js/login"
   await fetch(
     "http://localhost:3000/login",
     {
@@ -100,7 +100,9 @@ async function postData(data) {
     }
   ).then((response) => {
     if (!response.ok) {
+      alert("TRY LATER");
       console.log(response, "skdjnvksjdvkjsbn");
+      window.location.href = "C:/Users/Александр/OneDrive/Робочий стіл/work-project/index.html";
     }
 
     if (response.ok) {
@@ -134,8 +136,8 @@ btn.addEventListener("click", (e) => {
   //if validate successfull then post data on server
 
   if (
-    valuesInput["first-name"] != false &&
-    valuesInput["last-name"] != false &&
+    valuesInput["name"] != false &&
+    valuesInput["surName"] != false &&
     accumulateErrorValidation.phone == true &&
     accumulateErrorValidation.email == true &&
     accumulateErrorValidation.password == true &&
