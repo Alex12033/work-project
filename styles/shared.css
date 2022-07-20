@@ -499,7 +499,7 @@ body {
 /*--ФУТЕР--------------------------------------------------------*/
 
 .main-footer {
-  background: #031e3e;
+  background: #001731;
 }
 
 .main-footer__wrapp-all-info {
@@ -579,17 +579,13 @@ ul {
   background: #ffffff;
   padding: 0.75rem 0.75rem 0.5rem;
   border-radius: 8px;
-  width: 14rem;
-  height: 1rem;
   font-weight: 500;
   font-size: 0.9rem;
-  line-height: 1rem;
   color: #031e3e;
 }
 
 .input-btn {
   padding: 0.75rem 0.75rem 0.5rem;
-  width: 6rem;
   background: #398bff;
   border-radius: 8px;
   font-weight: 700;
