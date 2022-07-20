@@ -23,7 +23,7 @@ mongoose
     console.log("connected");
   })
   .catch((err) => {
-    console.log(err);
+    console.log("mongoose connect error", err);
   });
 
 app.use(bodyParser.json()); // to support JSON-encoded bodies
@@ -36,14 +36,12 @@ app.use(
 app.use(cors());
 
 //ROUTES
-app.get("/users", (req, res) => {
-  res.send("GET users from db");
+app.get("/users", async (req, res) => { 
+  const login = await Users.find();
+  res.send(login);
 });
 
 app.post("/login", (req, res) => {
-  // console.log(req.body);
-  // res.sendStatus(200);
-
   const login = new Users({
     firstName: req.body.name,
     lastName: req.body.surName,
@@ -53,18 +51,18 @@ app.post("/login", (req, res) => {
     confirmPassword: req.body.confirmPassword,
   });
 
-  login
-    .save()
-    .then((data) => {
-      res.sendStatus(200);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.sendStatus(403).json({ message: err });
+  login.save((error, user) => {
+    if (error) {
+      console.log(error, "error in save db");
+      res.sendStatus(400);
       return;
-    });
+    } else {
+      res.sendStatus(200);
+      return;
+    }
+  });
 });
 
 app.listen(process.env.PORT || port, () => {
   console.log(`Server is runing on port ${port}`);
-});
+}); 

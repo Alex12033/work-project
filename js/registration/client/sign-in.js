@@ -1,6 +1,9 @@
 let form = document.querySelector("form");
+
 let btn = document.querySelector(".confirm-button");
+
 let loader = document.querySelector(".loader-form");
+
 let msgAfterSignUp = document.querySelector(".msg-after-registration");
 
 const accumulateErrorValidation = {
@@ -89,29 +92,32 @@ async function postData(data) {
   btn.classList.add("disabled-button");
   loader.style.display = "block";
   //"https://work-project-62855.web.app/js/registration/server/server.js/login"
-  await fetch(
-    "http://localhost:3000/login",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }
-  ).then((response) => {
+  const response = await fetch("http://localhost:3000/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  }).then((response) => {
     if (!response.ok) {
-      alert("TRY LATER");
       console.log(response, "skdjnvksjdvkjsbn");
-      window.location.href = "C:/Users/Александр/OneDrive/Робочий стіл/work-project/index.html";
+      alert("Bad request ", response.status, response.statusText)
+      
+      loader.classList.add("hide-loader");
+      btn.classList.remove("disabled-button");
+      
+      return
     }
 
     if (response.ok) {
       loader.classList.add("hide-loader");
       msgAfterSignUp.style.display = "block";
+      console.log("response ok good");
       setTimeout(() => {
         //https://work-project-62855.web.app/index.html
-        window.location.href = "C:/Users/Александр/OneDrive/Робочий стіл/work-project/index.html";
-      }, 2000);
+        window.location.href =
+          "C:/Users/Александр/OneDrive/Робочий стіл/work-project/index.html";
+      }, 4000);
     }
   });
 }

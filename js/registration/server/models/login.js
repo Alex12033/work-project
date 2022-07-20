@@ -8,7 +8,7 @@ const UsersLoginSchema = new Schema({
   phone: String,
   email: String,
   password: String,
-  confirmPassword: String
+  confirmPassword: String,
 });
 
 module.exports = mongoose.model("Users", UsersLoginSchema);
