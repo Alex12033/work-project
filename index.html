@@ -46,7 +46,7 @@
                 <a href="./pages/form-registration/index.html">Sign In</a>
             </div>
         </div>
-                                <!-- BURGER-MENU-BTN -->
+        <!-- BURGER-MENU-BTN -->
         <button class="toggle-button">
             <span class="toggle-button__bar"></span>
             <span class="toggle-button__bar"></span>
@@ -55,15 +55,17 @@
     </div>
     <nav class="mobile-nav">
         <div class="mobile-nav__wrapper">
-                <div class="mobile-nav__close">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="0" x2="100" y1="0" y2="100" />
-                        <line x1="0" x2="100" y1="100" y2="0" />
-                      </svg>
+            <div class="mobile-nav__close">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" x2="100" y1="0" y2="100" />
+                    <line x1="0" x2="100" y1="100" y2="0" />
+                </svg>
             </div>
             <ul class="mobile-nav__items">
                 <li class="mobile-nav__item">
-                    <a href="https://gnatkovsky.com.ua/kak-sozdat-burger-menyu-s-vyezzhayushhejj-panelyu-na-chistom-css.html">How it works</a>
+                    <a
+                        href="https://gnatkovsky.com.ua/kak-sozdat-burger-menyu-s-vyezzhayushhejj-panelyu-na-chistom-css.html">How
+                        it works</a>
                 </li>
                 <li class="mobile-nav__item">
                     <a href="#">Pricing</a>
@@ -365,16 +367,64 @@
         </section>
         <section class="reviews-client">
             <div class="reviews-client__block container">
-                <div class="reviews-client_title">
-                   <h1 class="reviews-client_title-title">
-                    Rewievs
-                   </h1> 
+                <div class="reviews-client__title">
+                    <h1 class="reviews-client__title-title">
+                        Rewievs
+                    </h1>
                 </div>
-                <div class="reviews-client__reviews">
-                    <img src="./assets/reviews/reviews-client_1.png" alt="reviews-client_1">
-                    <img src="./assets/reviews/reviews-client_2.png" alt="reviews-client_2">
-                    <img src="./assets/reviews/reviews-client_3.png" alt="reviews-client_3">
+                <div class="adaptivn-slayder">
+                    <div class="navigation">
+                        <a class="prev" onclick="minusSlide()">❮</a>
+                    </div>
+                    <div class="parag">
+                        <img src="assets/reviews/reviews-client_1.png" alt="Первый слайд">
+                    </div>
+
+                    <div class="parag">
+                        <img src="assets/reviews/reviews-client_2.png" alt="Второй слайд">
+                    </div>
+
+                    <div class="parag">
+                        <img src="assets/reviews/reviews-client_4.png" alt="Третий слайд">
+                    </div>
+                    <div class="navigation">
+                        <a class="next" onclick="plusSlide()">❯</a>
+                    </div>
                 </div>
+                <div class="uneizmen-akemada">
+                    <span class="noguma-pomoki-kadra" onclick="currentSlide(1)"></span>
+                    <span class="noguma-pomoki-kadra" onclick="currentSlide(2)"></span>
+                    <span class="noguma-pomoki-kadra" onclick="currentSlide(3)"></span>
+                </div>
+                <!-- <div class="reviews-client__wrapper">
+                    <div class="reviews-client__inner">
+                        <div class="reviews-client__slide">
+                            <img src="./assets/reviews/reviews-client_1.png" alt="reviews-client_1">
+                        </div>
+                        <div class="reviews-client__slide">
+                            <img src="./assets/reviews/reviews-client_2.png" alt="reviews-client_2">
+                        </div>
+                        <div class="reviews-client__slide">
+                            <img src="./assets/reviews/reviews-client_3.png" alt="reviews-client_3">
+                        </div>
+                        <div class="reviews-client__slide">
+                            <img src="./assets/reviews/reviews-client_4.png" alt="reviews-client_1">
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="reviews-client__nav">
+                    <div class="reviews-client__nav--left">
+                        <img src="assets/reviews/left.png" alt="">
+                    </div>
+                    <div class="reviews-client__nav--numbers">
+                        <span id="current">02</span>
+                        <span class="slash">/</span>
+                        <span id="total">03</span>
+                    </div>
+                    <div class="reviews-client__nav--right">
+                        <img src="assets/reviews/right.png" alt="">
+                    </div>
+                </div> -->
             </div>
         </section>
         <section class="questions container">
@@ -628,7 +678,7 @@
     <script src="./js/section-features-acardeon.js" async defer></script>
     <script src="./js/section-questions-acc.js" async defer></script>
     <script src="./js/reviews-carousel/reviews-carousel.js" async defer></script>
-    
+
 </body>
 
 </html>
