@@ -30,9 +30,12 @@ body {
 }
 
 .border {
-  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.4);
-  margin: 0px auto;
 }
 
 .form-container {
@@ -44,7 +47,7 @@ body {
   flex-direction: column;
   opacity: 1;
   background: rgba(109, 67, 128, 0.4);
-  margin-top: 30px;
+  margin: 20% 0%;
   width: 350px;
 }
 
@@ -73,8 +76,7 @@ body {
 }
 
 .form-container span a:hover,
-.form-container span a:active
- {
+.form-container span a:active {
   color: #131313;
   transform: translateY(-5px);
   font-size: 25px;
@@ -83,7 +85,11 @@ body {
 @media (max-width: 450px) {
   .form-container {
     width: 300px;
-    margin-top: 20%;
+    margin-top: 40%;
+  }
+
+  .form-container span {
+    width: 100%;
   }
 }
 

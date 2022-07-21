@@ -22,17 +22,19 @@ body {
   height: 0;
 }
 
+.border {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-}
-
-.border {
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.4);
-  margin: 0px auto;
 }
 
 .form-container {
@@ -44,12 +46,13 @@ body {
   flex-direction: column;
   opacity: 1;
   background: rgba(109, 67, 128, 0.4);
-  margin-top: 70px;
+
+  margin-top: 25%;
+  margin-bottom: 20%;
   width: 350px;
-  height: 70%;
 }
 
-.form-container span {
+.form-container form span {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -60,7 +63,7 @@ body {
   font-weight: 100;
 }
 
-.form-container span a {
+.form-container form span a {
   display: block;
   transition: 0.3s ease-in;
   outline: none;
@@ -69,22 +72,21 @@ body {
   font-weight: 900;
 }
 
-.form-container span a:visited {
+.form-container form span a:visited {
   color: white;
 }
 
-.form-container span a:hover,
-.form-container span a:active
- {
+.form-container form span a:hover,
+.form-container form span a:active {
   color: #131313;
   transform: translateY(-5px);
   font-size: 25px;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 650px) {
   .form-container {
     width: 300px;
-    margin-top: 10%;
+    margin-top: 35%;
   }
 }
 
@@ -115,20 +117,20 @@ body {
 
 .msg-after-registration {
   display: none;
-  animation: msg-after .5s forwards ease-in;
+  animation: msg-after 0.5s forwards ease-in;
   color: white;
   text-align: center;
-  background: rgb(240,113,0);
+  background: rgb(240, 113, 0);
   margin-top: 50px;
   position: absolute;
   transform: translate(-50%, -50%);
-  
+
   left: 50%;
   top: 50%;
   z-index: 10;
 }
 
-@keyframes msg-after{
+@keyframes msg-after {
   from {
     opacity: 0;
     font-size: 5px;
@@ -145,7 +147,6 @@ body {
   }
 }
 
-
 .error-msg {
   display: none;
   position: absolute;
@@ -159,7 +160,7 @@ body {
   color: white;
   border-radius: 2px;
   transform: translateY(-80px);
-  background: rgba(240,113,0, 0.8);
+  background: rgba(240, 113, 0, 0.8);
 }
 
 @keyframes error-msg-animation {
@@ -244,7 +245,7 @@ body {
   width: 150px;
   height: 150px;
   z-index: 10;
-  animation: loader-smooth 0.4s forwards cubic-bezier(0,.101,1,.33);
+  animation: loader-smooth 0.4s forwards cubic-bezier(0, 0.101, 1, 0.33);
   position: absolute;
   top: 50%;
   left: 50%;
