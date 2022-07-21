@@ -136,10 +136,10 @@
   transform: scale(1.15);
 } */
 
-.adaptivn-slayder{
+.adaptivn-slayder {
   display: flex;
   justify-content: center;
-  max-width: 90%;
+  width: 100%;
   /* position: relative; */
   margin: 0 auto;
   height: 300px;
@@ -147,14 +147,24 @@
 }
 
 .adaptivn-slayder .parag img {
-  object-fit: cover;
+  /* object-fit: cover; */
   width: 100%;
   height: 300px;
   /* border: none !important;
   box-shadow: none !important; */
 }
 
-.adaptivn-slayder .prev, .adaptivn-slayder .next {
+.parag img {
+  transition: 0.5s;
+}
+
+.parag img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.adaptivn-slayder .prev,
+.adaptivn-slayder .next {
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
@@ -180,7 +190,12 @@
   border-radius: 3px 0 0 3px;
 }
 
-.navigation {
+.navigation-prev {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-next {
   display: flex;
   align-items: center;
 }
@@ -190,20 +205,20 @@
   background-color: rgba(25, 24, 24, 0.8);
 }
 
-.beksun-slayda{
+.beksun-slayda {
   position: absolute;
   color: #f4f4f7;
   font-size: 35px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%, -50%);
   text-shadow: 1px 1px 1px #141415, 0 0 1em #141415;
 }
 
 .uneizmen-akemada {
   text-align: center;
 }
-.noguma-pomoki-kadra{
+.noguma-pomoki-kadra {
   cursor: pointer;
   height: 12px;
   width: 12px;
@@ -224,20 +239,45 @@
   animation-name: fade;
   animation-duration: 1.5s;
 }
+
+@media (max-width: 515px) {
+  .navigation-next {
+    display: none;
+  }
+  .navigation-prev {
+    display: none;
+  }
+
+  .adaptivn-slayder {
+    width: 100%;
+  }
+
+  .adaptivn-slayder .parag img {
+    object-fit: cover;
+    max-width: 100%;
+    transition: none;
+  }
+  
+  .parag img:hover {
+    transform: none;
+    cursor:none;
+  }
+}
+
 @-webkit-keyframes fade {
   from {
-  opacity: .4
+    opacity: 0.4;
   }
   to {
-  opacity: 1
+    opacity: 1;
   }
 }
 @keyframes fade {
   from {
-  opacity: .4
+    opacity: 0.4;
   }
   to {
-  opacity: 1
+    opacity: 1;
   }
 }
 

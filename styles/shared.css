@@ -607,6 +607,42 @@ ul {
   justify-content: space-between;
 }
 
+.icon-facebook img {
+  transition: 0.5s;
+}
+
+.icon-facebook img:hover {
+  color: #398bff;
+  transform: scale(1.55);
+}
+
+.icon-instagram img {
+  transition: 0.5s;
+}
+
+.icon-instagram img:hover {
+  color: #398bff;
+  transform: scale(1.55);
+}
+
+.icon-twitter img {
+  transition: 0.5s;
+}
+
+.icon-twitter img:hover {
+  color: #398bff;
+  transform: scale(1.55);
+}
+
+.icon-something img {
+  transition: 0.5s;
+}
+
+.icon-something img:hover {
+  color: #398bff;
+  transform: scale(1.55);
+}
+
 .social-network p {
   font-weight: 400;
   font-size: 1rem;

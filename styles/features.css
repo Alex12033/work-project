@@ -28,6 +28,12 @@
   padding: 15px 15px 15px 15px;
   box-shadow: 1px 1px 1px 2px rgba(81, 79, 79, 0.1);
   margin-bottom: 10px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.game-selection:hover {
+  transform: scale(1.1)
 }
 
 .divider {
@@ -41,7 +47,7 @@
 .game-selection__description {
   font-size: 20px;
   color: #001731;
-  opacity: 0.3;
+  opacity: 0.2;
   display: none;
   transform: translateY(-50px);
 }
@@ -50,12 +56,18 @@
   margin-bottom: 10px;
   padding: 15px 15px;
   box-shadow: 1px 3px 1px 1px rgba(81, 79, 79, 0.1);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.browse-solution:hover {
+  transform: scale(1.1);
 }
 
 .browse-solution__description {
   font-size: 20px;
   color: #001731;
-  opacity: 0.3;
+  opacity: 0.2;
   display: none;
   transform: translateY(-50px);
 }
@@ -64,12 +76,18 @@
   margin-bottom: 30px;
   padding: 15px 15px;
   box-shadow: 1px 1px 1px 1px rgba(81, 79, 79, 0.1);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.practice-mode:hover {
+  transform: scale(1.1);
 }
 
 .practice-mode__description {
   font-size: 20px;
   color: #001731;
-  opacity: 0.3;
+  opacity: 0.2;
   display: none;
   transform: translateY(-50px);
 }
