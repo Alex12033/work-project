@@ -153,7 +153,12 @@
   }
 
   @media (max-width: 580px) {
-    .block-descr__list--ol {
+    .block-descr h1{
+      animation: text-title 1s forwards ease-in;
+    }
+    .block-descr__list--ol,
+    .block-descr__list--ul {
+      animation: test none;
       animation: text-title 1s forwards ease-in;
     }
     .block-descr__list--ol-img,
