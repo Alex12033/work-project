@@ -35,6 +35,10 @@
   .pricing-cards-second {
     margin-bottom: 100px;
   }
+
+  .pricing-title-link {
+    animation: test 1s forwards ease-in;
+  }
   
   .pricing-title-link h2 {
     color: white;
@@ -56,6 +60,15 @@
   .card-pro__favourite {
     width: 50%;
     margin: 40px auto 0 auto;
+    animation: test 1s forwards ease-in;
+  }
+
+  @keyframes test {
+    from {
+      transform: translateZ(100px) scale(0.9);
+    } to {
+      transform: translateZ(0px) scale(1);
+    }
   }
   
   .card-pro {

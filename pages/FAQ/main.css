@@ -20,13 +20,24 @@
     width: 80%;
     margin: 60px auto 0 auto;
     text-align: center;
+    animation: test 1s forwards ease-in;
   }
 
   .block-descr-ol {
     width: 80%;
     margin: 100px auto 0 auto;
     text-align: center;
+    animation: test 1s forwards ease-in;
   }
+
+  @keyframes test {
+    from {
+      transform: translateZ(100px) scale(0.9);
+    } to {
+      transform: translateZ(0px) scale(1);
+    }
+  }
+
 
   .block-descr h1, 
   .block-descr-ol h1 {

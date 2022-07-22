@@ -27,6 +27,15 @@
   .block-descr h1{
     color: white;
     margin: 40px 0 0 0;
+    animation: text-title 1s forwards ease-in;
+  }
+
+  @keyframes text-title {
+    from {
+      transform: translateZ(100px) scale(0.9);
+    } to {
+      transform: translateZ(0px) scale(1);
+    }
   }
 
   .block-descr__list--ol {
@@ -144,6 +153,14 @@
   }
 
   @media (max-width: 580px) {
+    .block-descr h1{
+      animation: text-title 1s forwards ease-in;
+    }
+    .block-descr__list--ol,
+    .block-descr__list--ul {
+      animation: test none;
+      animation: text-title 1s forwards ease-in;
+    }
     .block-descr__list--ol-img,
     .block-descr__list--ul-img {
       flex-direction: column;
