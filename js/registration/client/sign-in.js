@@ -91,8 +91,9 @@ function validatePassword(data) {
 async function postData(data) {
   btn.classList.add("disabled-button");
   loader.style.display = "block";
-  //"http://localhost:3000/login"
-  const response = await fetch("https://work-project-62855.web.app/js/registration/server/server.js/login", {
+  //http://localhost:3000/login
+  //https://work-project-62855.web.app/js/registration/server/server.js/login
+  const response = await fetch("https://62cddbfda43bf780085fe7b3.mockapi.io/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -113,7 +114,6 @@ async function postData(data) {
       msgAfterSignUp.style.display = "block";
       console.log("response ok good");
       setTimeout(() => {
-        //"C:/Users/Александр/OneDrive/Робочий стіл/work-project/index.html";
         window.location.href = "https://work-project-62855.web.app/index.html";
       }, 4000);
     }

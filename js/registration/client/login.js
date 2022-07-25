@@ -6,6 +6,8 @@ let msgAfterLogin = document.querySelector(".msg-after-registration");
 
 let users; //heare we save users from db in fetch
 
+let loader = document.querySelector(".loader-form");
+
 let successfullLogin = {
   email: false,
   password: false,
@@ -39,14 +41,15 @@ function helperValidateLogin(user, login) {
   if (user.length !== 0 && user["email"] === login["email"]) {
     successfullLogin.email = true;
   } else {
+    successfullLogin.email = false;
     displayErrorMsg("block", "email", "Wrong email");
   }
 
   if (login["password"] !== false && user["password"] === login["password"]) {
     successfullLogin.password = true;
   } else {
+    successfullLogin.password = false;
     displayErrorMsg("block", "password", "Wrong password");
-    console.log(login["password"], user["password"]);
   }
 
   if (
@@ -55,12 +58,12 @@ function helperValidateLogin(user, login) {
   ) {
     successfullLogin.confirmPassword = true;
   } else {
+    successfullLogin.confirmPassword = false;
     displayErrorMsg(
       "block",
       "confirmPassword",
       "Please enter the same password"
     );
-    console.log(login["password"], user["password"]);
   }
 }
 
@@ -94,22 +97,23 @@ btn.addEventListener("click", async (e) => {
     const { name, value } = input;
     valueInput[name] = value === "" ? false : value;
   });
-  //"https://work-project-62855.web.app/js/registration/server/users"
-  const result = await fetch(
-    "https://work-project-62855.web.app/js/registration/server/users"
-  )
+  //https://work-project-62855.web.app/js/registration/server/server.js/users
+  //http://localhost:3000/users
+  
+  loader.style.display = "block";
+  
+  const result = await fetch("https://62cddbfda43bf780085fe7b3.mockapi.io/login")
     .then((response) => {
-      console.log(response);
       return response.json();
     })
     .then((data) => {
-      console.log(data);
+      loader.style.display = "none";
       isRegistered(data, valueInput); //users from db
     })
     .catch((error) => {
       // handle error here
       console.log(error);
-      displayErrorMsg("block", "error", "Something went wrong...we fix it)");
+      displayErrorMsg("block", error, "Something went wrong...we fix it)");
     });
 
   if (

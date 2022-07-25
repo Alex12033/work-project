@@ -36,6 +36,10 @@ app.use(
 app.use(cors());
 
 //ROUTES
+app.get("/", async (req, res) => {
+  res.send("HELLO I AM SERVER");
+});
+
 app.get("/users", async (req, res) => {
   const login = await Users.find();
   res.send(login);
@@ -53,7 +57,7 @@ app.post("/login", (req, res) => {
 
   login.save((error, user) => {
     if (error) {
-      console.log(error, "error in save db");
+      console.log(error, "error in process save db");
       res.sendStatus(400);
       return;
     } else {
