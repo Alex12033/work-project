@@ -117,7 +117,8 @@ async function postData(data) {
       msgAfterSignUp.style.display = "block";
 
       setTimeout(() => {
-        window.location.href = "https://work-project-62855.web.app/index.html";
+        window.location.href =
+          "https://work-project-62855.web.app/pages/form-registration/login/index.html";
       }, 2000);
     }
   });

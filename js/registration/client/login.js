@@ -120,6 +120,10 @@ btn.addEventListener("click", async (e) => {
     successfullLogin.confirmPassword
   ) {
     msgAfterLogin.style.display = "block";
+    
+    localStorage.setItem("logged", true);
+    localStorage.setItem("user", `${valueInput["name"]}`);
+
     setTimeout(() => {
       window.location.href = "https://work-project-62855.web.app/index.html";
     }, 2500);
