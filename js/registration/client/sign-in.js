@@ -91,8 +91,8 @@ function validatePassword(data) {
 async function postData(data) {
   btn.classList.add("disabled-button");
   loader.style.display = "block";
-  //"https://work-project-62855.web.app/js/registration/server/server.js/login"
-  const response = await fetch("http://localhost:3000/login", {
+  //"http://localhost:3000/login"
+  const response = await fetch("https://work-project-62855.web.app/js/registration/server/server.js/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -101,12 +101,11 @@ async function postData(data) {
   }).then((response) => {
     if (!response.ok) {
       console.log(response, "skdjnvksjdvkjsbn");
-      alert("Bad request ", response.status, response.statusText)
-      
+      alert("Bad request ", response.status, response.statusText);
+
       loader.classList.add("hide-loader");
       btn.classList.remove("disabled-button");
-      
-      return
+      return;
     }
 
     if (response.ok) {
@@ -114,9 +113,8 @@ async function postData(data) {
       msgAfterSignUp.style.display = "block";
       console.log("response ok good");
       setTimeout(() => {
-        //https://work-project-62855.web.app/index.html
-        window.location.href =
-          "C:/Users/Александр/OneDrive/Робочий стіл/work-project/index.html";
+        //"C:/Users/Александр/OneDrive/Робочий стіл/work-project/index.html";
+        window.location.href = "https://work-project-62855.web.app/index.html";
       }, 4000);
     }
   });

@@ -54,8 +54,8 @@ body {
 .form-container span {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 70%;
+  justify-content: space-between;
+  width: 65%;
   margin-top: 10px;
   color: white;
   font-size: 14px;
@@ -63,12 +63,12 @@ body {
 }
 
 .form-container span a {
-  display: block;
+  opacity: 0.5;
   transition: 0.3s ease-in;
   outline: none;
   text-decoration: none;
   font-size: large;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .form-container span a:visited {
@@ -89,7 +89,9 @@ body {
   }
 
   .form-container span {
-    width: 100%;
+    width: 80%;
+    text-align: center;
+    flex-direction: column;
   }
 }
 
@@ -132,10 +134,34 @@ body {
   z-index: 10;
 }
 
+.error-input {
+  animation: error-input-animation 0.4s ease-in-out forwards;
+  border: 2px solid rgba(212, 18, 18, 0.8);
+  box-shadow: 0px 4px 20px rgba(253, 1, 1, 0.5);
+}
+
+@keyframes error-input-animation {
+  0% {
+    transform: translateX(5px);
+  }
+
+  80% {
+    transform: translateX(-5px);
+  }
+
+  95% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
 .error-msg {
   display: none;
   position: absolute;
-  top: 0%;
+  top: 5%;
   animation: error-msg-animation 0.4s forwards ease-in-out;
   text-align: center;
   width: 100%;
@@ -144,8 +170,7 @@ body {
   font-weight: 600;
   color: white;
   border-radius: 2px;
-  transform: translateY(-80px);
-  background: rgba(240, 113, 0, 0.8);
+  background: rgba(240, 113, 0, 0.6);
 }
 
 @keyframes error-msg-animation {

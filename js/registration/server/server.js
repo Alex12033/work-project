@@ -36,7 +36,7 @@ app.use(
 app.use(cors());
 
 //ROUTES
-app.get("/users", async (req, res) => { 
+app.get("/users", async (req, res) => {
   const login = await Users.find();
   res.send(login);
 });
