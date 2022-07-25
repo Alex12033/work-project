@@ -68,7 +68,6 @@ function helperValidateLogin(user, login) {
 }
 
 function isRegistered(users, login) {
-  console.log(users);
   for (value in login) {
     //validation empty fields
     if (login[value] == false) {
@@ -107,12 +106,11 @@ btn.addEventListener("click", async (e) => {
       return response.json();
     })
     .then((data) => {
-      loader.style.display = "none";
+      loader.style.display = "block";
       isRegistered(data, valueInput); //users from db
     })
     .catch((error) => {
       // handle error here
-      console.log(error);
       displayErrorMsg("block", error, "Something went wrong...we fix it)");
     });
 
@@ -124,6 +122,8 @@ btn.addEventListener("click", async (e) => {
     msgAfterLogin.style.display = "block";
     setTimeout(() => {
       window.location.href = "https://work-project-62855.web.app/index.html";
-    }, 2000);
+    }, 2500);
+  } else {
+    loader.style.display = "none";
   }
 });

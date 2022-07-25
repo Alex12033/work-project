@@ -12,6 +12,7 @@ const accumulateErrorValidation = {
   email: false,
   password: false,
   confirmPassword: false,
+  isRegistered: false,
 };
 
 function displayErrorMsg(display, elem, msg = "") {
@@ -93,15 +94,17 @@ async function postData(data) {
   loader.style.display = "block";
   //http://localhost:3000/login
   //https://work-project-62855.web.app/js/registration/server/server.js/login
-  const response = await fetch("https://62cddbfda43bf780085fe7b3.mockapi.io/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  }).then((response) => {
+  const response = await fetch(
+    "https://62cddbfda43bf780085fe7b3.mockapi.io/login",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }
+  ).then((response) => {
     if (!response.ok) {
-      console.log(response, "skdjnvksjdvkjsbn");
       alert("Bad request ", response.status, response.statusText);
 
       loader.classList.add("hide-loader");
@@ -112,12 +115,35 @@ async function postData(data) {
     if (response.ok) {
       loader.classList.add("hide-loader");
       msgAfterSignUp.style.display = "block";
-      console.log("response ok good");
+
       setTimeout(() => {
         window.location.href = "https://work-project-62855.web.app/index.html";
-      }, 4000);
+      }, 2000);
     }
   });
+}
+
+async function isRegisteredChecker(inputEmail) {
+  let users = [];
+  await fetch("https://62cddbfda43bf780085fe7b3.mockapi.io/login")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      users = data;
+    });
+
+  let flag = false;
+  users.map((user) => {
+    if (user["email"] === inputEmail && inputEmail !== false) {
+      accumulateErrorValidation.isRegistered = false;
+      flag = true;
+    } else {
+      flag = false;
+      accumulateErrorValidation.isRegistered = true;
+    }
+  });
+  flag && displayErrorMsg("block", "email", "This email already use !");
 }
 
 btn.addEventListener("click", (e) => {
@@ -132,21 +158,24 @@ btn.addEventListener("click", (e) => {
     valuesInput[name] = value == "" ? false : value; //if input empty we save false in object else we save value of input
   });
 
+  isRegisteredChecker(valuesInput["email"]);
   validateEmptyInput(valuesInput);
   validatePhoneNumber(valuesInput);
   validateEmail(valuesInput);
   validatePassword(valuesInput);
 
   //if validate successfull then post data on server
-
   if (
-    valuesInput["name"] != false &&
-    valuesInput["surName"] != false &&
-    accumulateErrorValidation.phone == true &&
-    accumulateErrorValidation.email == true &&
-    accumulateErrorValidation.password == true &&
-    accumulateErrorValidation.confirmPassword == true
+    (valuesInput["name"] != false &&
+      valuesInput["surName"] != false &&
+      accumulateErrorValidation.phone == true &&
+      accumulateErrorValidation.email == true &&
+      accumulateErrorValidation.password == true &&
+      accumulateErrorValidation.confirmPassword == true,
+    accumulateErrorValidation.isRegistered == true)
   ) {
     postData(valuesInput);
+  } else {
+    console.log("not good");
   }
 });
