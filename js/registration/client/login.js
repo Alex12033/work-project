@@ -67,6 +67,7 @@ function helperValidateLogin(user, login) {
   }
 }
 
+let nameUSer = "";
 function isRegistered(users, login) {
   for (value in login) {
     //validation empty fields
@@ -80,18 +81,19 @@ function isRegistered(users, login) {
     //here we check is yet user in db or not with this email
     if (login["email"] !== false && login["email"] === user["email"]) {
       helperValidateLogin(user, login);
+      nameUSer = user["name"];
       flag = false;
     }
   });
   flag && helperValidateLogin([], login); //this need for correct validation email if in map not yet user we send empty arra as sign what user enter incorrect email
 }
+console.log(nameUSer);
 
 btn.addEventListener("click", async (e) => {
   e.preventDefault();
 
   let input = document.querySelectorAll("input");
   const valueInput = {};
-
   input.forEach((input) => {
     const { name, value } = input;
     valueInput[name] = value === "" ? false : value;
@@ -108,26 +110,28 @@ btn.addEventListener("click", async (e) => {
     .then((data) => {
       loader.style.display = "block";
       isRegistered(data, valueInput); //users from db
+
+      if (
+        successfullLogin.email &&
+        successfullLogin.password &&
+        successfullLogin.confirmPassword
+      ) {
+        msgAfterLogin.style.display = "block";
+        
+        localStorage.setItem("logged", true);
+        localStorage.setItem("user", `${nameUSer}`);
+        console.log(nameUSer);
+        
+    
+        setTimeout(() => {
+          window.location.href = "https://work-project-62855.web.app/index.html";
+        }, 2500);
+      } else {
+        loader.style.display = "none";
+      }
     })
     .catch((error) => {
       // handle error here
       displayErrorMsg("block", error, "Something went wrong...we fix it)");
     });
-
-  if (
-    successfullLogin.email &&
-    successfullLogin.password &&
-    successfullLogin.confirmPassword
-  ) {
-    msgAfterLogin.style.display = "block";
-    
-    localStorage.setItem("logged", true);
-    localStorage.setItem("user", `${valueInput["name"]}`);
-
-    setTimeout(() => {
-      window.location.href = "https://work-project-62855.web.app/index.html";
-    }, 2500);
-  } else {
-    loader.style.display = "none";
-  }
 });

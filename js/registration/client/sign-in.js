@@ -126,24 +126,28 @@ async function postData(data) {
 
 async function isRegisteredChecker(inputEmail) {
   let users = [];
+  let flag = false;
+
   await fetch("https://62cddbfda43bf780085fe7b3.mockapi.io/login")
     .then((response) => {
       return response.json();
     })
     .then((data) => {
       users = data;
+      
+      
+      users.map((user) => { 
+        if (user["email"] === inputEmail && user["email"] != false) {
+          console.log(user["email"], inputEmail, "the same");
+          accumulateErrorValidation.isRegistered = false;
+          flag = true;
+        } else {
+          console.log(user["email"], inputEmail, "not same");
+          flag = false;
+          accumulateErrorValidation.isRegistered = true;
+        }
+      });
     });
-
-  let flag = false;
-  users.map((user) => {
-    if (user["email"] === inputEmail && inputEmail !== false) {
-      accumulateErrorValidation.isRegistered = false;
-      flag = true;
-    } else {
-      flag = false;
-      accumulateErrorValidation.isRegistered = true;
-    }
-  });
   flag && displayErrorMsg("block", "email", "This email already use !");
 }
 
@@ -167,16 +171,21 @@ btn.addEventListener("click", (e) => {
 
   //if validate successfull then post data on server
   if (
-    (valuesInput["name"] != false &&
-      valuesInput["surName"] != false &&
-      accumulateErrorValidation.phone == true &&
-      accumulateErrorValidation.email == true &&
-      accumulateErrorValidation.password == true &&
-      accumulateErrorValidation.confirmPassword == true,
-    accumulateErrorValidation.isRegistered == true)
+    valuesInput["name"] != false &&
+    valuesInput["surName"] != false &&
+    valuesInput["phone"] != false &&
+    accumulateErrorValidation.phone == true &&
+    valuesInput["email"] != false &&
+    accumulateErrorValidation.email == true &&
+    valuesInput["password"] != false &&
+    accumulateErrorValidation.password == true &&
+    valuesInput["confirmPassword"] != false &&
+    accumulateErrorValidation.confirmPassword == true &&
+    accumulateErrorValidation.isRegistered == true
   ) {
+    console.log(accumulateErrorValidation.isRegistered);
     postData(valuesInput);
   } else {
-    console.log("not good");
+    console.log(accumulateErrorValidation);
   }
 });
