@@ -571,6 +571,33 @@ ul {
   opacity: 0.8;
 }
 
+.loader-footer {
+  display: none;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 100px;
+  background-color: #398afd;
+}
+
+.message-footer {
+  display: none;
+  padding: 100px 150px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  
+  border-radius: 5px;
+  background-color: #398afd;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+
 .input {
   vertical-align: middle;
 }
