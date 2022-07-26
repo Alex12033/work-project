@@ -209,7 +209,7 @@ margin: 10px;
 
 .adaptivn-slayder {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
   /* position: relative; */
   margin: 0 auto;
