@@ -12,6 +12,7 @@ const accumulateErrorValidation = {
   email: false,
   password: false,
   confirmPassword: false,
+  isRegistered: false,
 };
 
 function displayErrorMsg(display, elem, msg = "") {
@@ -91,35 +92,63 @@ function validatePassword(data) {
 async function postData(data) {
   btn.classList.add("disabled-button");
   loader.style.display = "block";
-  //"https://work-project-62855.web.app/js/registration/server/server.js/login"
-  const response = await fetch("http://localhost:3000/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  }).then((response) => {
+  //http://localhost:3000/login
+  //https://work-project-62855.web.app/js/registration/server/server.js/login
+  const response = await fetch(
+    "https://62cddbfda43bf780085fe7b3.mockapi.io/login",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }
+  ).then((response) => {
     if (!response.ok) {
-      console.log(response, "skdjnvksjdvkjsbn");
-      alert("Bad request ", response.status, response.statusText)
-      
+      alert("Bad request ", response.status, response.statusText);
+
       loader.classList.add("hide-loader");
       btn.classList.remove("disabled-button");
-      
-      return
+      return;
     }
 
     if (response.ok) {
       loader.classList.add("hide-loader");
       msgAfterSignUp.style.display = "block";
-      console.log("response ok good");
+
       setTimeout(() => {
-        //https://work-project-62855.web.app/index.html
         window.location.href =
-          "C:/Users/Александр/OneDrive/Робочий стіл/work-project/index.html";
-      }, 4000);
+          "https://work-project-62855.web.app/pages/form-registration/login/index.html";
+      }, 2000);
     }
   });
+}
+
+async function isRegisteredChecker(inputEmail) {
+  let users = [];
+  let flag = false;
+
+  await fetch("https://62cddbfda43bf780085fe7b3.mockapi.io/login")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      users = data;
+      
+      
+      users.map((user) => { 
+        if (user["email"] === inputEmail && user["email"] != false) {
+          console.log(user["email"], inputEmail, "the same");
+          accumulateErrorValidation.isRegistered = false;
+          flag = true;
+        } else {
+          console.log(user["email"], inputEmail, "not same");
+          flag = false;
+          accumulateErrorValidation.isRegistered = true;
+        }
+      });
+    });
+  flag && displayErrorMsg("block", "email", "This email already use !");
 }
 
 btn.addEventListener("click", (e) => {
@@ -134,21 +163,29 @@ btn.addEventListener("click", (e) => {
     valuesInput[name] = value == "" ? false : value; //if input empty we save false in object else we save value of input
   });
 
+  isRegisteredChecker(valuesInput["email"]);
   validateEmptyInput(valuesInput);
   validatePhoneNumber(valuesInput);
   validateEmail(valuesInput);
   validatePassword(valuesInput);
 
   //if validate successfull then post data on server
-
   if (
     valuesInput["name"] != false &&
     valuesInput["surName"] != false &&
+    valuesInput["phone"] != false &&
     accumulateErrorValidation.phone == true &&
+    valuesInput["email"] != false &&
     accumulateErrorValidation.email == true &&
+    valuesInput["password"] != false &&
     accumulateErrorValidation.password == true &&
-    accumulateErrorValidation.confirmPassword == true
+    valuesInput["confirmPassword"] != false &&
+    accumulateErrorValidation.confirmPassword == true &&
+    accumulateErrorValidation.isRegistered == true
   ) {
+    console.log(accumulateErrorValidation.isRegistered);
     postData(valuesInput);
+  } else {
+    console.log(accumulateErrorValidation);
   }
 });
