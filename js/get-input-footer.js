@@ -23,7 +23,7 @@ btnInput.addEventListener("click", async (e) => {
   };
 
   if (emailInput.value !== "") {
-    await fetch("https://62cddbfda43bf780085fe7b3.mockapi.io/footer-dat", {
+    await fetch("https://62cddbfda43bf780085fe7b3.mockapi.io/footer-data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,6 +34,7 @@ btnInput.addEventListener("click", async (e) => {
         if (response.ok) {
           loader.style.display = "none";
           emailInput.value = "";
+          messageForUser("block", "We send all info on your email");
         }
 
         if (!response.ok) {
