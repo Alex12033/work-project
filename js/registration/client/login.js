@@ -6,6 +6,8 @@ let msgAfterLogin = document.querySelector(".msg-after-registration");
 
 let users; //heare we save users from db in fetch
 
+let loader = document.querySelector(".loader-form");
+
 let successfullLogin = {
   email: false,
   password: false,
@@ -39,14 +41,15 @@ function helperValidateLogin(user, login) {
   if (user.length !== 0 && user["email"] === login["email"]) {
     successfullLogin.email = true;
   } else {
+    successfullLogin.email = false;
     displayErrorMsg("block", "email", "Wrong email");
   }
 
   if (login["password"] !== false && user["password"] === login["password"]) {
     successfullLogin.password = true;
   } else {
+    successfullLogin.password = false;
     displayErrorMsg("block", "password", "Wrong password");
-    console.log(login["password"], user["password"]);
   }
 
   if (
@@ -55,17 +58,17 @@ function helperValidateLogin(user, login) {
   ) {
     successfullLogin.confirmPassword = true;
   } else {
+    successfullLogin.confirmPassword = false;
     displayErrorMsg(
       "block",
       "confirmPassword",
       "Please enter the same password"
     );
-    console.log(login["password"], user["password"]);
   }
 }
 
+let nameUSer = "";
 function isRegistered(users, login) {
-  console.log(users);
   for (value in login) {
     //validation empty fields
     if (login[value] == false) {
@@ -78,48 +81,57 @@ function isRegistered(users, login) {
     //here we check is yet user in db or not with this email
     if (login["email"] !== false && login["email"] === user["email"]) {
       helperValidateLogin(user, login);
+      nameUSer = user["name"];
       flag = false;
     }
   });
   flag && helperValidateLogin([], login); //this need for correct validation email if in map not yet user we send empty arra as sign what user enter incorrect email
 }
+console.log(nameUSer);
 
 btn.addEventListener("click", async (e) => {
   e.preventDefault();
 
   let input = document.querySelectorAll("input");
   const valueInput = {};
-
   input.forEach((input) => {
     const { name, value } = input;
     valueInput[name] = value === "" ? false : value;
   });
-  //"https://work-project-62855.web.app/js/registration/server/users"
-  const result = await fetch(
-    "https://work-project-62855.web.app/js/registration/server/users"
-  )
+  //https://work-project-62855.web.app/js/registration/server/server.js/users
+  //http://localhost:3000/users
+  
+  loader.style.display = "block";
+  
+  const result = await fetch("https://62cddbfda43bf780085fe7b3.mockapi.io/login")
     .then((response) => {
-      console.log(response);
       return response.json();
     })
     .then((data) => {
-      console.log(data);
+      loader.style.display = "block";
       isRegistered(data, valueInput); //users from db
+
+      if (
+        successfullLogin.email &&
+        successfullLogin.password &&
+        successfullLogin.confirmPassword
+      ) {
+        msgAfterLogin.style.display = "block";
+        
+        localStorage.setItem("logged", true);
+        localStorage.setItem("user", `${nameUSer}`);
+        console.log(nameUSer);
+        
+    
+        setTimeout(() => {
+          window.location.href = "https://work-project-62855.web.app/index.html";
+        }, 2500);
+      } else {
+        loader.style.display = "none";
+      }
     })
     .catch((error) => {
       // handle error here
-      console.log(error);
-      displayErrorMsg("block", "error", "Something went wrong...we fix it)");
+      displayErrorMsg("block", error, "Something went wrong...we fix it)");
     });
-
-  if (
-    successfullLogin.email &&
-    successfullLogin.password &&
-    successfullLogin.confirmPassword
-  ) {
-    msgAfterLogin.style.display = "block";
-    setTimeout(() => {
-      window.location.href = "https://work-project-62855.web.app/index.html";
-    }, 2000);
-  }
 });
