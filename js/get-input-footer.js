@@ -4,18 +4,24 @@ let btnInput = document.querySelector(".input-btn");
 
 let loader = document.querySelector(".loader-footer");
 
+let backdropLoader = document.querySelector('.backdrop-loader');
+
+let backdropMessage = document.querySelector('.backdrop-message');
+
 function messageForUser(display, text) {
   let msgBlock = document.querySelector(".message-footer");
   msgBlock.innerHTML = text;
   msgBlock.style.display = display;
 
   setTimeout(() => {
+    backdropMessage.style.display = 'none';
     msgBlock.style.display = "none";
   }, 3500);
 }
 
 btnInput.addEventListener("click", async (e) => {
   e.preventDefault();
+  backdropLoader.style.display = 'block';
   loader.style.display = "block";
 
   let obj = {
@@ -32,13 +38,17 @@ btnInput.addEventListener("click", async (e) => {
     })
       .then((response) => {
         if (response.ok) {
+          backdropLoader.style.display = 'none';       
           loader.style.display = "none";
           emailInput.value = "";
+          backdropMessage.style.display = 'block';
           messageForUser("block", "We send all info on your email");
         }
 
         if (!response.ok) {
+          backdropMessage.style.display = 'block';
           messageForUser("block", "Error query! Try later");
+          backdropLoader.style.display = 'none';        
           loader.style.display = "none";
         }
       })
@@ -46,7 +56,9 @@ btnInput.addEventListener("click", async (e) => {
         console.log(error);
       });
   } else {
+    backdropMessage.style.display = 'block';
     messageForUser("block", "Enter email field");
+    backdropLoader.style.display = 'none';   
     loader.style.display = "none";
   }
 });
