@@ -621,7 +621,7 @@ ul {
   vertical-align: middle;
 }
 
-#email {
+.email-footer {
   background: #ffffff;
   padding: 8px;
   border-radius: 4px;
@@ -629,6 +629,10 @@ ul {
   font-weight: 500;
   font-size: 13px;
   color: #031e3e;
+}
+
+.red-border {
+  border: 2px solid rgb(255, 66, 66);
 }
 
 .input-btn {

@@ -40,6 +40,7 @@ btnInput.addEventListener("click", async (e) => {
         if (response.ok) {
           backdropLoader.style.display = 'none';       
           loader.style.display = "none";
+          emailInput.classList.remove('red-border');
           emailInput.value = "";
           backdropMessage.style.display = 'block';
           messageForUser("block", "We send all info on your email");
@@ -50,14 +51,17 @@ btnInput.addEventListener("click", async (e) => {
           messageForUser("block", "Error query! Try later");
           backdropLoader.style.display = 'none';        
           loader.style.display = "none";
+          emailInput.classList.remove('red-border');
         }
       })
       .catch((error) => {
         console.log(error);
       });
-  } else {
+  } 
+  else {
     backdropMessage.style.display = 'block';
     messageForUser("block", "Enter email field");
+    emailInput.classList.add('red-border');
     backdropLoader.style.display = 'none';   
     loader.style.display = "none";
   }
