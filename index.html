@@ -624,7 +624,7 @@
                     </div>
 
                     <div class="accordion__contact-us">
-                        <p>If you have any further questions please <span><a href="#">contact us</a></span> </p>
+                        <p>If you have any further questions please <span class="contact-us">contact us</span> </p>
                     </div>
                 </container>
             </wrapper>
@@ -691,11 +691,15 @@
                                 The latest news, articles, and resources, sent to your inbox weekly.
                             </p>
                             <form class="input">
-                                <div class="message-footer"></div>
-                                <div class="loader-footer">
-                                    <img src="./assets/loader.svg" alt="loader">
+                                <div class="backdrop-message">
+                                    <div class="message-footer"></div>
                                 </div>
-                                <input type="email" placeholder="Your Email" id="email" name="email-footer" />
+                                    <div class="backdrop-loader">
+                                        <div class="loader-footer">
+                                            <img src="./assets/loader.svg" alt="loader">
+                                        </div>
+                                    </div>
+                                <input class="email-footer" type="email" placeholder="Your Email" id="email" name="email-footer" />
                                 <input class="input-btn" type="submit" value="Learn more">
                             </form>
                     </wrapper>
@@ -723,12 +727,20 @@
     <div class="modal">
         <div class="modal__dialog">
             <div class="modal__content">
-                <form action="#">
+                <form action="input">
+                    <div class="modal__backdrop-message">
+                        <div class="modal__message"></div>
+                    </div>
+                        <div class="modal__backdrop-loader">
+                            <div class="modal__loader">
+                                <img src="./assets/loader.svg" alt="loader">
+                            </div>
+                        </div>
                     <div data-close class="modal__close">&times;</div>
                     <div class="modal__title">WE WILL CONTACT YOU ASAP!</div>
-                    <input required placeholder="Your name" name="name" type="text" class="modal__input">
-                    <input required placeholder="Your phone number" name="phone" type="phone" class="modal__input">
-                    <button class="btn btn_dark btn_min">Сall me back</button>
+                    <input required placeholder="Your name" name="name-modal" type="text" class="modal__input">
+                    <input required placeholder="Your phone number" name="phone-modal" type="phone" class="modal__input">
+                    <button class="modal__btn btn_dark btn_min">Сall me back</button>
                 </form>
                 <div class="promotion__timer">
                     <div class="title">Until the end of the promotion left:</div>
@@ -763,6 +775,7 @@
     <script src="./js/reviews-carousel/reviews-carousel.js" async defer></script>
     <script src="./js/timer.js" async defer></script>
     <script src="./js/get-input-footer.js" async defer></script>
+    <script src="./js/get-input-modal.js" async defer></script>
 
 </body>
 
