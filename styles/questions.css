@@ -83,14 +83,15 @@
  }
 
 .accordion__contact-us {
-  font-size: 1.25rem;
+  font-size: 24px;
   color: #737f8e;
   margin-top: 2rem;
   margin-bottom: 3rem;
 }
 
-.accordion__contact-us a {
-  text-decoration: none;
+.contact-us {
+  cursor: pointer;
+  color: #398BFF;
 }
 
 @keyframes smoothy-display {
