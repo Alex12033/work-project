@@ -28,7 +28,7 @@ btnInput.addEventListener("click", async (e) => {
     email: emailInput.value,
   };
 
-  if (emailInput.value !== "") {
+  if (emailInput.value !== "" && inputEmail.email !== false) {
     await fetch("https://62cddbfda43bf780085fe7b3.mockapi.io/footer-data", {
       method: "POST",
       headers: {
