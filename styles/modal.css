@@ -18,7 +18,7 @@
 
 .modal__backdrop-loader,
 .modal__backdrop-message {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   border-radius: 8px;
@@ -34,7 +34,7 @@
 .modal__loader {
   display: none;
   /* display: block; */
-  position: fixed;
+  position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -50,7 +50,7 @@
   /* display: block; */
   width: 500px;
   padding: 100px 0;
-  position: fixed;
+  position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -167,13 +167,7 @@
 @media (max-width: 500px) {
   .modal__backdrop-loader,
 .modal__backdrop-message {
-  position: absolute;
   border-radius: 0px;
-}
-
-.modal__loader,
-.modal__message { 
-  position: absolute;
 }
 
   .modal__dialog {
