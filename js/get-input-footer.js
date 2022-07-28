@@ -12,6 +12,7 @@ function messageForUser(display, text) {
   let msgBlock = document.querySelector(".message-footer");
   msgBlock.innerHTML = text;
   msgBlock.style.display = display;
+  backdropMessage.style.display = "block";
 
   setTimeout(() => {
     backdropMessage.style.display = "none";
@@ -31,6 +32,9 @@ function validateEmail(inputValue) {
 }
 
 async function postData(obj) {
+  loader.style.display = "block";
+  backdropLoader.style.display = "block";
+
   await fetch("https://62cddbfda43bf780085fe7b3.mockapi.io/footer-data", {
     method: "POST",
     headers: {
@@ -40,16 +44,16 @@ async function postData(obj) {
   })
     .then((response) => {
       if (response.ok) {
-        backdropLoader.style.display = "none";
-        loader.style.display = "none";
         emailInput.classList.remove("red-border");
         emailInput.value = "";
-        backdropMessage.style.display = "block";
+        
+        loader.style.display = "none";
+        backdropLoader.style.display = "none";
+
         messageForUser("block", "We send all info on your email");
       }
 
       if (!response.ok) {
-        backdropMessage.style.display = "block";
         messageForUser("block", "Error query! Try later");
         backdropLoader.style.display = "none";
         loader.style.display = "none";
@@ -63,8 +67,6 @@ async function postData(obj) {
 
 btnInput.addEventListener("click", async (e) => {
   e.preventDefault();
-  backdropLoader.style.display = "block";
-  loader.style.display = "block";
 
   let obj = {
     email: emailInput.value,
@@ -73,13 +75,11 @@ btnInput.addEventListener("click", async (e) => {
   if (validateEmail(emailInput.value) === true && emailInput !== "") {
     postData(obj);
   } else if (emailInput.value === "") {
-    backdropMessage.style.display = "block";
     messageForUser("block", "Enter email field");
     emailInput.classList.add("red-border");
     backdropLoader.style.display = "none";
     loader.style.display = "none";
   } else {
-    backdropMessage.style.display = "block";
     messageForUser("block", "Enter truthy email");
     emailInput.classList.add("red-border");
     backdropLoader.style.display = "none";

@@ -31,7 +31,7 @@ function validatePhoneNumber(data) {
   }
 }
 
-async function postData(data) {
+async function postDataModal(data) {
   await fetch("https://62cddbfda43bf780085fe7b3.mockapi.io/footer-data", {
     method: "POST",
     headers: {
@@ -76,11 +76,11 @@ btnModal.addEventListener("click", async (e) => {
   };
 
   if (
-    nameInput.value !== "" &&
-    phoneInput.value !== "" &&
+    /[0-9]/.test(nameInput.value) !== true && 
     validatePhoneNumber(obj.phone) === true
   ) {
-    postData(obj);
+    postDataModal(obj);
+    console.log(/[0-9]/.test(nameInput.value));
   } else if (nameInput.value === "" || phoneInput.value === "") {
     
     backdropMessageModal.style.display = "block";
