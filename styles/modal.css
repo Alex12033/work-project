@@ -165,6 +165,17 @@
 }
 
 @media (max-width: 500px) {
+  .modal__backdrop-loader,
+.modal__backdrop-message {
+  position: absolute;
+  border-radius: 0px;
+}
+
+.modal__loader,
+.modal__message { 
+  position: absolute;
+}
+
   .modal__dialog {
     width: 100%;
   }
