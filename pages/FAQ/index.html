@@ -206,7 +206,15 @@
                                 The latest news, articles, and resources, sent to your inbox weekly.
                             </p>
                             <form class="input">
-                                <input type="email" placeholder="Your Email" id="email" name="email" />
+                                <div class="backdrop-message">
+                                    <div class="message-footer"></div>
+                                </div>
+                                    <div class="backdrop-loader">
+                                        <div class="loader-footer">
+                                            <img src="./assets/loader.svg" alt="loader">
+                                        </div>
+                                    </div>
+                                <input name=email-footer type="email" placeholder="Your Email" id="email" name="email" />
                                 <input class="input-btn" type="submit" value="Learn more">
                             </form>
                     </wrapper>
@@ -230,8 +238,9 @@
         </div>
 
     </footer>
-    <script src="../../js/registration/get-local-storage.js" async defer></script>
-    <script src="../../js/burger-menu.js" async defer></script>
+    <script src="../../dist/burger_menu.bundle.js"></script>
+    <script src="../../dist/auth_data.bundle.js"></script>
+    <script src="../../dist/footer_input.bundle.js"></script>
 </body>
 
 </html>
