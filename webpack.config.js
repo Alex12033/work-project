@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   context: path.resolve(__dirname, "/"),
@@ -22,6 +23,10 @@ module.exports = {
 
   devtool: "source-map",
 
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  }
 //   module: {
 //     rules: [
 //       {
