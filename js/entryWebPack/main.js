@@ -1,3 +1,5 @@
+require('../../main.css');
+
 const sectioQuestion = require("../section-questions-acc"),
 sectioFeaturesQuestion = require("../section-features-acardeon"),
 timer = require("../modal-timer"),

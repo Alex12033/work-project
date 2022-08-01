@@ -1,11 +1,12 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 const TerserPlugin = require("terser-webpack-plugin");
+
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = {
-  context: path.resolve(__dirname, "/"),
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
+module.exports = {
   entry: {
     main: path.resolve(__dirname, "./js/entryWebPack/main.js"),
     burger_menu: path.resolve(__dirname, "./js/entryWebPack/burgerMenu.js"),
@@ -35,12 +36,19 @@ module.exports = {
 
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin()],
+    minimizer: [
+      new TerserPlugin(),
+      new OptimizeCssAssetsPlugin({
+        assetNameRegExp: /\.optimize\.css$/g,
+        cssProcessor: require("cssnano"),
+      }),
+    ],
   },
+
   module: {
     rules: [
       {
-        test: /\.css$/i,
+        test: /\.css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -53,17 +61,10 @@ module.exports = {
 
   plugins: [
     new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
       filename: "[name].css",
       chunkFilename: "[id].css",
-      ignoreOrder: false, // Включите, чтобы убрать предупреждения о конфликтующем порядке
     }),
-    //     new HtmlWebpackPlugin({
-    //       template: path.resolve(__dirname, "index.html"),
-    //       chunks: ["./js/modules/timer.js"],
-    //       scriptLoading: "defer",
-    //     }),
-    //     new HtmlWebpackPlugin({
-    //       template: "./pages/form-registration/login/index.html",
-    //     }),
   ],
 };
