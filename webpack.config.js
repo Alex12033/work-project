@@ -36,13 +36,7 @@ module.exports = {
 
   optimization: {
     minimize: true,
-    minimizer: [
-      new TerserPlugin(),
-      new OptimizeCssAssetsPlugin({
-        assetNameRegExp: /\.optimize\.css$/g,
-        cssProcessor: require("cssnano"),
-      }),
-    ],
+    minimizer: [new TerserPlugin()],
   },
 
   module: {
@@ -66,5 +60,7 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css",
     }),
+
+    new OptimizeCssAssetsPlugin(),
   ],
 };
