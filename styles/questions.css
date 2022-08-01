@@ -1,10 +1,9 @@
-
 .accordion {
   margin: 32px 0;
 }
 
 .accordion-title {
-    margin-bottom: 64px;
+  margin-bottom: 64px;
 }
 
 .accordion-title__question-mark {
@@ -20,13 +19,12 @@
 }
 
 .accordion-title__title {
-    font-size: 42px;
+  font-size: 42px;
   margin: 20px 0;
 }
 
 .accordion__item {
   margin-bottom: 20px;
-  /* padding: 24px; */
   border: 1px solid #e5e5e5;
   border-radius: 12px;
   cursor: pointer;
@@ -55,7 +53,7 @@
 
 .accordion__item:hover {
   cursor: pointer;
-  background:#398BFF;
+  background: #398bff;
 }
 
 .accordion__item_body {
@@ -80,7 +78,7 @@
 .accordion__item--active,
 .accordion__item--active:hover {
   background: #ccc;
- }
+}
 
 .accordion__contact-us {
   font-size: 24px;
@@ -91,7 +89,7 @@
 
 .contact-us {
   cursor: pointer;
-  color: #398BFF;
+  color: #398bff;
 }
 
 @keyframes smoothy-display {
@@ -117,15 +115,19 @@
 }
 
 @media (max-width: 970px) {
-    .accordion p {
-        text-align: center;
-    }
+  .accordion p {
+    text-align: center;
+  }
+
+  .accordion__item {
+    cursor: none;
+  }
 }
 
 @media (max-width: 530px) {
   .accordion-title__title {
     font-size: 28px;
-}
+  }
   .accordion__item_header {
     font-size: 16px;
   }
