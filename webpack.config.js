@@ -42,7 +42,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test:/.(s*)css$/,
+        test: /.(s*)css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -53,11 +53,18 @@ module.exports = {
           },
         ],
       },
+
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
     ],
   },
 
   plugins: [
-    new MiniCssExtractPlugin({ //for unpack css styles in bundle
+    new MiniCssExtractPlugin({
+      //for unpack css styles in bundle
       filename: "[name].css",
       chunkFilename: "[id].css",
     }),
