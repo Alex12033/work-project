@@ -11,7 +11,7 @@
     <title>oHama</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./dist/main.css">
 </head>
 
 <body>
@@ -373,7 +373,7 @@
                 </div>
                 <div class="adaptivn-slayder">
                     <div class="navigation-prev">
-                        <a class="prev" onclick="minusSlide()">❮</a>
+                        <a class="prev">❮</a>
                     </div>
                     <div class="parag">
                         <div class="main-slide">
@@ -458,13 +458,13 @@
                         <!-- <img src="assets/reviews/reviews-client_4.png" alt="Третий слайд"> -->
                     </div>
                     <div class="navigation-next">
-                        <a class="next" onclick="plusSlide()">❯</a>
+                        <a class="next">❯</a>
                     </div>
                 </div>
                 <div class="uneizmen-akemada">
-                    <span class="noguma-pomoki-kadra" onclick="currentSlide(1)"></span>
-                    <span class="noguma-pomoki-kadra" onclick="currentSlide(2)"></span>
-                    <span class="noguma-pomoki-kadra" onclick="currentSlide(3)"></span>
+                    <span id="1" class="noguma-pomoki-kadra"></span>
+                    <span id="2" class="noguma-pomoki-kadra"></span>
+                    <span id="3" class="noguma-pomoki-kadra"></span>
                 </div>
             </div>
         </section>
@@ -767,16 +767,10 @@
         </div>
     </div>
 
-    <script src="./js/modal-window/modal.js" async defer></script>
-    <script src="./js/registration/get-local-storage.js" async defer></script>
-    <script src="./js/burger-menu.js" async defer></script>
-    <script src="./js/section-features-acardeon.js" async defer></script>
-    <script src="./js/section-questions-acc.js" async defer></script>
-    <script src="./js/reviews-carousel/reviews-carousel.js" async defer></script>
-    <script src="./js/modal-timer.js" async defer></script>
-    <script src="./js/get-input-footer.js" async defer></script>
-    <script src="./js/get-input-modal.js" async defer></script>
-
+    <script src="./dist/burger_menu.bundle.js"></script>
+    <script src="./dist/auth_data.bundle.js"></script>
+    <script src="./dist/main.bundle.js"></script>
+    <script src="./dist/footer_input.bundle.js"></script>
 </body>
 
 </html>
