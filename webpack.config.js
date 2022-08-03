@@ -34,33 +34,36 @@ module.exports = {
 
   devtool: "source-map",
 
-  optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
-  },
+  // optimization: {
+  //   minimize: true,
+  //   minimizer: [new TerserPlugin()],
+  // },
 
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test:/.(s*)css$/,
         use: [
+          MiniCssExtractPlugin.loader,
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: "css-loader",
           },
-          "css-loader",
+          {
+            loader: "sass-loader",
+          },
         ],
       },
     ],
   },
 
   plugins: [
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
+    new MiniCssExtractPlugin({ //for unpack css styles in bundle
       filename: "[name].css",
       chunkFilename: "[id].css",
     }),
 
-    new OptimizeCssAssetsPlugin(),
+    new TerserPlugin(), //for minification js code
+
+    new OptimizeCssAssetsPlugin(), //for minification css
   ],
 };
