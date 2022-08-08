@@ -1,10 +1,14 @@
 const path = require("path");
 
+const webpack = require("webpack");
+
 const TerserPlugin = require("terser-webpack-plugin");
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -25,19 +29,14 @@ module.exports = {
   },
 
   devServer: {
-    static: {
-      directory: path.join(__dirname, "/"),
-    },
+    historyApiFallback: true,
+    static: path.resolve(__dirname, "./"),
+    open: true,
     compress: true,
     port: 8080,
   },
 
   devtool: "source-map",
-
-  // optimization: {
-  //   minimize: true,
-  //   minimizer: [new TerserPlugin()],
-  // },
 
   module: {
     rules: [
@@ -57,7 +56,7 @@ module.exports = {
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ["babel-loader"],
       },
     ],
   },
@@ -72,5 +71,12 @@ module.exports = {
     new TerserPlugin(), //for minification js code
 
     new OptimizeCssAssetsPlugin(), //for minification css
+
+    new webpack.HotModuleReplacementPlugin(),
+
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './index.html'
+    }),
   ],
 };
