@@ -1,7 +1,5 @@
 const path = require("path");
 
-const webpack = require("webpack");
-
 const TerserPlugin = require("terser-webpack-plugin");
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -72,11 +70,13 @@ module.exports = {
 
     new OptimizeCssAssetsPlugin(), //for minification css
 
-    new webpack.HotModuleReplacementPlugin(),
-
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: './index.html'
+      filename: "index.html",
+      template: "./index.html",
+      excludeChunks: [
+        "login_form",
+        "sign_up_form",
+      ],
     }),
   ],
 };
