@@ -1,0 +1,138 @@
+.accordion {
+  margin: 32px 0;
+}
+
+.accordion-title {
+  margin-bottom: 64px;
+}
+
+.accordion-title__question-mark {
+  width: 32px;
+  height: 32px;
+  background: #63ba3b;
+  border-radius: 6px;
+}
+
+.accordion-title__question-mark img {
+  margin-left: 11px;
+  margin-top: 8px;
+}
+
+.accordion-title__title {
+  font-size: 42px;
+  margin: 20px 0;
+}
+
+.accordion__item {
+  margin-bottom: 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.accordion__item:hover {
+  transform: scale(1.05);
+}
+
+.accordion__item_header {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.accordion__item_wrapper-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.accordion__item_header-plus {
+  padding-left: 16px;
+}
+
+.accordion__item:hover {
+  cursor: pointer;
+  background: #398bff;
+}
+
+.accordion__item_body {
+  font-size: 20px;
+  color: #001731;
+  opacity: 0.3;
+  display: none;
+  overflow: hidden;
+  margin: 0 16px 24px 16px;
+}
+
+.accordion__item--active .accordion__item_body {
+  animation: smoothy-display 1s ease-in-out forwards;
+  display: block;
+}
+
+.accordion__item--active .accordion__item_header-plus {
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+
+.accordion__item--active,
+.accordion__item--active:hover {
+  background: #ccc;
+}
+
+.accordion__contact-us {
+  font-size: 24px;
+  color: #737f8e;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.contact-us {
+  cursor: pointer;
+  color: #398bff;
+}
+
+@keyframes smoothy-display {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  80% {
+    transform: translateY(-10px);
+    opacity: 0.5;
+  }
+
+  95% {
+    transform: translateY(-20px);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 970px) {
+  .accordion p {
+    text-align: center;
+  }
+
+  .accordion__item {
+    cursor: none;
+  }
+}
+
+@media (max-width: 530px) {
+  .accordion-title__title {
+    font-size: 28px;
+  }
+  .accordion__item_header {
+    font-size: 16px;
+  }
+
+  .accordion__contact-us {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,115 @@
+.backdrop {
+    background: url(../../assets/img/Studio-Display.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  
+    background-size: contain;
+  }
+  .header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    margin: 0 auto;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .pricing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 60px;
+  }
+  
+  .pricing .pricing-cards-first ,
+  .pricing  .pricing-cards-second{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .pricing-cards-first,
+  .pricing-cards-second {
+    margin-top: 50px;
+  }
+  
+  .pricing-cards-second {
+    margin-bottom: 100px;
+  }
+
+  .pricing-title-link {
+    animation: test 1s forwards ease-in;
+  }
+  
+  .pricing-title-link h2 {
+    color: white;
+    font-weight: bold;
+    height: 20px;
+  }
+  
+  .pricing-title-link span {
+    font-size: 15px;
+    color: white;
+    margin-bottom: -10px;
+  }
+  
+  .pricing .pricing-cards {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card-pro__favourite {
+    width: 50%;
+    margin: 40px auto 0 auto;
+    animation: test 1s forwards ease-in;
+  }
+
+  @keyframes test {
+    from {
+      transform: translateZ(100px) scale(0.9);
+    } to {
+      transform: translateZ(0px) scale(1);
+    }
+  }
+  
+  .card-pro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #031e3e;
+    box-shadow: 0px 4px 50px rgba(57, 139, 255, 0.3);
+    border-radius: 12px;
+    padding: 27px 24px;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 3px 2px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    padding: 27px 24px;
+    width: 27%;
+  }
+  
+  .card-title {
+    justify-content: space-around;
+  }
+  
+  @media (max-width: 1270px) {
+    .card-pro__favourite {
+      width: 95%;
+      margin-bottom: 20px;
+    }
+  
+    .pricing-cards-first {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
+  
+    .pricing-cards-second {
+      flex-direction: column;
+      margin-top: 0;
+    }
+  
+  }
