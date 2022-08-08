@@ -71,8 +71,12 @@ module.exports = {
     new OptimizeCssAssetsPlugin(), //for minification css
 
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: './index.html'
+      filename: "index.html",
+      template: "./index.html",
+      excludeChunks: [
+        "login_form",
+        "sign_up_form",
+      ],
     }),
   ],
 };
